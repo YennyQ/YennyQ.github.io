@@ -361,8 +361,8 @@ livere_uid: MTAyMC8zMDgzMC83Mzgx
 # This plugin is more useful in China, make sure you known how to use it.
 # And you can find the use guide at official webiste: http://www.jiathis.com/.
 # Warning: JiaThis does not support https.
-jiathis:
-  uid: 2144360
+# jiathis:
+#   uid: 2144360
 #add_this_id:
 
 # Share
