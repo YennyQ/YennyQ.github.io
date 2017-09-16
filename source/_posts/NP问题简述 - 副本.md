@@ -1,0 +1,132 @@
+---
+title: The Learning Problem
+tags: [机器学习基石, 笔记]
+categories: 机器学习
+mathjax: true
+---
+## 1.1 Course Introduction
+
+课程简介
+
+### Foundation Oriented 基础型
+
+What every machine learning user should know:
+- philosophical illustrations
+- key theory
+- core techniques
+- usage in practice
+
+介绍了要掌握机器学习需要学好的四个方面：哲学思想、理论工具、算法技巧、实际使用。这门课将更偏重于理论和思想，而非算法。
+
+### 课程主要分四大部分
+- When can machine learning?(illustative + technical)
+- Why can machine learning?(theoretical + illustrative)
+- How can machine learning?(technical + practical)
+- How can machine learning better?(practical + theoretical)
+
+## 1.2 What is Machine Learning
+
+什么是机器学习？
+
+### From Learning to Machine Learning
+
+学习是人或者动物通过观察和思考转换成有用的技巧的过程。
+![学习](http://ow5t5k2fx.bkt.clouddn.com/learning.png)
+
+机器学习，则是计算机通过数据和计算获得有用技巧的过程。
+![机器学习](http://ow5t5k2fx.bkt.clouddn.com/machine_learning.png)
+
+skill，技巧又是什么呢？
+技巧就是improve some performance measure，增进某种东西的表现。
+![机器学习](http://ow5t5k2fx.bkt.clouddn.com/machine_learning_skill.png)
+
+例如，通过前十年的股票数据得出能获得更多增益的投资技巧，就算是机器学习。
+
+### Why use machine learning?
+
+因为机器学习是一个alternative route to build complicated system
+- When human cannot program system manually——navigating on Mars
+- When human cannot 'define the solution' easily——speech/visual recognition
+- When needing rapid decisions that human cannot do——high-frequency trading
+- When needing to be user-oriented in a massive scale——consumer-targeted marketing
+
+### Key Essence of Machine Learning
+
+- exists some 'underlying pattern' to be learned——so 'performance measure' can be improved
+- but no programmable (easy) definition——so ML is needed
+- somehow there is data about the pattern——so ML has some 'inputs' to learn from
+
+## 1.3 Applications of Machine Learning
+
+机器学习的应用
+
+用几个实际的项目介绍了机器学习在人们日常生活中的衣食住行各方面的应用。本小节大概主要是为了激发兴趣和联系实际，并告诉大家机器学习的应用前景广泛。
+
+## 1.4 Components of Machine Learning
+
+机器学习的组成部分
+
+用银行判断是否要发行信用卡给客户的例子，来讲述机器学习可以分为哪些部分。用形式化符号来定义了要学习的问题。
+
+- **input**: $ x \in X $ (customer application, 银行通过用户申请资料获取的信息)
+- **output**: $ y \in Y $ (good/bad after approving credit card, 是否要发卡给客户)
+- unknown pattern to be learned <=> **target function**: $ f: X \rightarrow Y $ (ideal credit approval formula, 理想的银行发卡公式)
+- **data** <=> training examples: $ D = \{(x_1, y_1), (x_2, y_2), ... ,(x_n, y_n)\} $ (historical records in bank, 银行发卡的历史记录)
+- **hypothesis** <=> skill with hopefully good performance: $ g: X \rightarrow Y $ ('learned' formula to be used, 能学习到的公式)
+
+这样可以得到一个简单的流程图，如下：
+![机器学习简要流程](http://ow5t5k2fx.bkt.clouddn.com/simple_flow.png)
+
+可以看出，机器学习就是我们从一个未知的f中得到大量的数据，然后在这些数据的基础上得到一个未知的g的过程。
+
+更详细一点的流程图如下所示：
+![机器学习简要流程](http://ow5t5k2fx.bkt.clouddn.com/detail_flow.png)
+
+- target $f$ unknown
+- hypothesis $g$ hopefully $\approx f$ but possibly different from f
+- hypothesis set $H$ can contain good or bad hypotheses, up to $A$ to pick the 'best' one as $g$
+- learning model = $A$ and $H$
+- **summary: use data to compute hypothesis $g$ that approximates target $f$**
+
+## 1.5 Machine Learning and Other Fields
+
+机器学习与其他领域
+
+### Machine Learning and Data Mining
+
+机器学习与数据挖掘
+
+Data Mining: use (huge) data to **find property that is interesting**
+
+例如超市经营者根据数据来判断某些物品的销售之间是不是有什么关联。
+
+Difficult to distinguish ML and DM in reality:
+- if 'interesting property' same as 'hypothesis that approximates target'——ML = DM
+- if 'interesting property' related to 'hypothesis that approximates target'——DM can help ML, and vice versa(often, not always)
+- traditional DM also focused on efficient computation in large database
+
+### Machine Learning and Artificial Intelligence
+
+机器学习与人工智能
+
+Artificial Intelligence: compute something that **shows intelligent behavior**
+
+例如让计算机自动下棋。
+
+ML is one possible route to realize AI:
+- $g \approx f$ is something that shows intelligent behavior——ML can realize AI, among other routes
+- e.g. chess playing
+    - traditional AI: game tree
+    - ML for AI: 'learning from data'
+
+### Machine Learning and Statistics
+
+机器学习与统计
+
+Statistics: use data to **make inference** about an unknown process
+
+例如丢硬币的正面几率。
+
+statistics has many useful tools for ML:
+- $g$ is an inference outcome; $f$ is something unknown——statistics can be used to achieve ML
+- traditional statistics also focus on provable results with math assumptions, and care less about computation
