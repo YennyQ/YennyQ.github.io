@@ -1,6 +1,6 @@
 ---
 title: NP问题简述
-tags: [算法]
+tags: [算法, 概念]
 categories: 其他
 mathjax: true
 ---
