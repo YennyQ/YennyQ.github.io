@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="机器学习,笔记,概念," />
+  <meta name="keywords" content="机器学习,笔记,PLA,Pocket," />
 
 
 
@@ -95,24 +95,23 @@
 
 
 
-<meta name="description" content="3.1 Learning with Different Output Space $ Y $不同的输出空间 Binary Classification二元分类 $ Y = {-1, +1} $  credit approve/disapprove email spam/non-spam patient sick/not sick  Multiclass Classification多元分类 $ Y">
-<meta name="keywords" content="机器学习,笔记,概念">
+<meta name="description" content="2.1 Perceptron Hypothesis Set感知器假设空间 依旧以银行核发信用卡为例，讲述Perceptron的$ H $。  For $ x = (x_1, x_2, \cdots, x_d) $ ——‘features of customer’, compute a weighted ‘score’ and  approve credit if $ \sum_{i=1}^d w_">
+<meta name="keywords" content="机器学习,笔记,PLA,Pocket">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习基石3——Types of Learning">
-<meta property="og:url" content="http://yoursite.com/2017/09/22/机器学习基石3/index.html">
+<meta property="og:title" content="机器学习基石2——Learning to Answer Yes or No">
+<meta property="og:url" content="http://yoursite.com/2017/09/18/机器学习基石2/index.html">
 <meta property="og:site_name" content="YennyQ&#39;s Note">
-<meta property="og:description" content="3.1 Learning with Different Output Space $ Y $不同的输出空间 Binary Classification二元分类 $ Y = {-1, +1} $  credit approve/disapprove email spam/non-spam patient sick/not sick  Multiclass Classification多元分类 $ Y">
+<meta property="og:description" content="2.1 Perceptron Hypothesis Set感知器假设空间 依旧以银行核发信用卡为例，讲述Perceptron的$ H $。  For $ x = (x_1, x_2, \cdots, x_d) $ ——‘features of customer’, compute a weighted ‘score’ and  approve credit if $ \sum_{i=1}^d w_">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ow5t5k2fx.bkt.clouddn.com/3.1-.png">
-<meta property="og:image" content="http://ow5t5k2fx.bkt.clouddn.com/3.2-.png">
-<meta property="og:image" content="http://ow5t5k2fx.bkt.clouddn.com/3.3-.png">
-<meta property="og:image" content="http://ow5t5k2fx.bkt.clouddn.com/3.5.png">
-<meta property="og:image" content="http://ow5t5k2fx.bkt.clouddn.com/3.6.png">
-<meta property="og:updated_time" content="2017-09-22T12:58:37.287Z">
+<meta property="og:image" content="http://ow5t5k2fx.bkt.clouddn.com/2.1.png">
+<meta property="og:image" content="http://ow5t5k2fx.bkt.clouddn.com/2.2.png">
+<meta property="og:image" content="http://ow5t5k2fx.bkt.clouddn.com/2.3.png">
+<meta property="og:image" content="http://ow5t5k2fx.bkt.clouddn.com/2.5.png">
+<meta property="og:updated_time" content="2017-09-22T13:21:28.080Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="机器学习基石3——Types of Learning">
-<meta name="twitter:description" content="3.1 Learning with Different Output Space $ Y $不同的输出空间 Binary Classification二元分类 $ Y = {-1, +1} $  credit approve/disapprove email spam/non-spam patient sick/not sick  Multiclass Classification多元分类 $ Y">
-<meta name="twitter:image" content="http://ow5t5k2fx.bkt.clouddn.com/3.1-.png">
+<meta name="twitter:title" content="机器学习基石2——Learning to Answer Yes or No">
+<meta name="twitter:description" content="2.1 Perceptron Hypothesis Set感知器假设空间 依旧以银行核发信用卡为例，讲述Perceptron的$ H $。  For $ x = (x_1, x_2, \cdots, x_d) $ ——‘features of customer’, compute a weighted ‘score’ and  approve credit if $ \sum_{i=1}^d w_">
+<meta name="twitter:image" content="http://ow5t5k2fx.bkt.clouddn.com/2.1.png">
 
 
 
@@ -142,13 +141,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/22/机器学习基石3/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/18/机器学习基石2/"/>
 
 
 
 
 
-  <title>机器学习基石3——Types of Learning | YennyQ's Note</title>
+  <title>机器学习基石2——Learning to Answer Yes or No | YennyQ's Note</title>
   
 
 
@@ -322,7 +321,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/22/机器学习基石3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/18/机器学习基石2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YennyQ">
@@ -339,7 +338,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">机器学习基石3——Types of Learning</h1>
+          <h1 class="post-title" itemprop="name headline">机器学习基石2——Learning to Answer Yes or No</h1>
         
 
         <div class="post-meta">
@@ -351,8 +350,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-22T20:10:03+08:00">
-                2017-09-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-18T18:34:03+08:00">
+                2017-09-18
               </time>
             
 
@@ -391,7 +390,7 @@
 
           
           
-             <span id="/2017/09/22/机器学习基石3/" class="leancloud_visitors" data-flag-title="机器学习基石3——Types of Learning">
+             <span id="/2017/09/18/机器学习基石2/" class="leancloud_visitors" data-flag-title="机器学习基石2——Learning to Answer Yes or No">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -422,81 +421,150 @@
       
 
       
-        <h2 id="3-1-Learning-with-Different-Output-Space-Y"><a href="#3-1-Learning-with-Different-Output-Space-Y" class="headerlink" title="3.1 Learning with Different Output Space $ Y $"></a>3.1 Learning with Different Output Space $ Y $</h2><p>不同的输出空间</p>
-<h3 id="Binary-Classification"><a href="#Binary-Classification" class="headerlink" title="Binary Classification"></a>Binary Classification</h3><p>二元分类</p>
-<p>$ Y = {-1, +1} $</p>
+        <h2 id="2-1-Perceptron-Hypothesis-Set"><a href="#2-1-Perceptron-Hypothesis-Set" class="headerlink" title="2.1 Perceptron Hypothesis Set"></a>2.1 Perceptron Hypothesis Set</h2><p>感知器假设空间</p>
+<p>依旧以银行核发信用卡为例，讲述Perceptron的$ H $。</p>
 <ul>
-<li>credit approve/disapprove</li>
-<li>email spam/non-spam</li>
-<li>patient sick/not sick</li>
+<li>For $ x = (x_1, x_2, \cdots, x_d) $ ——‘features of customer’, compute a weighted ‘score’ and <ul>
+<li>approve credit if $ \sum_{i=1}^d w_i x_i &gt; threshold$</li>
+<li>deny credit if $ \sum_{i=1}^d w_i x_i &lt; threshold$</li>
 </ul>
-<h3 id="Multiclass-Classification"><a href="#Multiclass-Classification" class="headerlink" title="Multiclass Classification"></a>Multiclass Classification</h3><p>多元分类</p>
-<p>$ Y = {1, 2, …, K} $</p>
+</li>
+<li>$ y: {+1(good), -1(bad)} $, 0 ignored —— linear formula $ h \in H$ are $ h(x) = sign((\sum_{i=1}^d w_i x_i) - threshold) $</li>
+</ul>
+<p>如同考试打分，每道题有个特定分数，即权重($w$)，再给定一个及格线，即阈值($threshold$)。</p>
+<p>以下仅为了符号方便进行数学简化：</p>
+<p>$ h(x) = sign((\sum_{i=1}^d w_i x_i) - threshold) $</p>
+<p>$         = sign((\sum_{i=1}^d w_i x_i) + (-threshold * 1)) $</p>
+<p>$         = sign((\sum_{i=1}^d w_i x_i) + (w_0 * x_0)) $</p>
+<p>$         = sign(\sum_{i=0}^d w_i x_i) $</p>
+<p>$         = sign(\mathbf{w}^T \mathbf{x})$</p>
+<p>如此，不同的$h(x)$对应不同的向量$\mathbf{w}$，也可以说假设空间$H$即向量$\mathbf{w}$的取值范围。</p>
+<p>用直观一点的图像来解释这个感知器假设函数。</p>
+<p>为便于观察，特征数量限制在两个，以将图像限定在二维平面内，此时的$ h $函数：$ h(x) = sign(w_0 + w_1 x_1 + w_2 x_2) $</p>
+<p><img src="http://ow5t5k2fx.bkt.clouddn.com/2.1.png" alt="image"></p>
 <ul>
-<li>written digits $ \Rightarrow $ 0, 1, …, 9</li>
-<li>pictures $ \Rightarrow $ apple, orange, strawberry</li>
-<li>emails $ \Rightarrow $ spam, primary, social, promotion</li>
+<li>customer features $ \mathbf{x} $: points on the plane (points in $ R^d $)</li>
+<li>labels $ y $: $ \circ  (+1)$, $ \times (-1)$</li>
+<li>hypothesis $ h $: lines (or hyperplanes in $ R^d $)</li>
 </ul>
-<h3 id="Regression"><a href="#Regression" class="headerlink" title="Regression"></a>Regression</h3><p>回归</p>
-<p>$ Y = R $</p>
+<p>所以$ h $是在不同的权值$ \mathbf{w} $下对应的不同的直线（或平面/超平面），因为$ sign $是以0为分界线的函数，此时$ w_0 + w_1 x_1 + w_2 x_2 = 0 $，恰好是这条直线，而直线一侧为正，一侧为负。</p>
+<p><strong>perceptrons $\Leftrightarrow $ linear (binary) classifiers</strong></p>
+<h2 id="2-2-Perceptron-Learning-Algorithm-PLA"><a href="#2-2-Perceptron-Learning-Algorithm-PLA" class="headerlink" title="2.2 Perceptron Learning Algorithm (PLA)"></a>2.2 Perceptron Learning Algorithm (PLA)</h2><p>感知器学习算法</p>
+<p>Select $ g $ From $ H $</p>
 <ul>
-<li>company data $ \Rightarrow $ stock price</li>
-<li>climate data $ \Rightarrow $ temperature</li>
+<li>want: $ g \approx f $(hard when $ f $ unknown)</li>
+<li>almost necessary: $ g \approx f $ on $ D $, ideally $ g(x_n) = f(x_n) = y_n$</li>
+<li>difficult: $ H $ is of infinite size</li>
+<li>idea: start from some $ g_0 $, and ‘correct’ its mistakes on  $ D $</li>
 </ul>
-<h3 id="Structured-Learning"><a href="#Structured-Learning" class="headerlink" title="Structured Learning"></a>Structured Learning</h3><p>结构化学习</p>
-<p>$ Y = structures $ </p>
+<p>确定问题点，分析已知条件，列出解题障碍，得出一个大概可能的解法。然后顺着解法讲述了感知器学习算法。</p>
+<p>Perceptron Learning Algorithm</p>
+<p>Start from some $ \mathbf{w_0} $ (say, $ \mathbf{0} $), for t = 0, 1, …</p>
 <ul>
-<li>protein data $ \Rightarrow $ protein folding</li>
-<li>speech data $ \Rightarrow $ speech parse tree</li>
+<li>find a mistake of $ \mathbf{w_t} $ called $ (x_{n(t)}, y_{n(t)}) $, $ sign(\mathbf{w_t}^T \mathbf{x_{n(t)}}) \neq y_{n(t)}$</li>
+<li>(try to )correct the mistake by $ \mathbf{w_{t+1}} \leftarrow \mathbf{w_t} + y_{n(t)} \mathbf{x_{n(t)}} $ </li>
 </ul>
-<h2 id="3-2-Learning-with-Different-Data-Label-y-n"><a href="#3-2-Learning-with-Different-Data-Label-y-n" class="headerlink" title="3.2 Learning with Different Data Label $ y_n $"></a>3.2 Learning with Different Data Label $ y_n $</h2><p>不同的数据标记</p>
-<h3 id="Supervised-Learning-Recognition-with-y-n"><a href="#Supervised-Learning-Recognition-with-y-n" class="headerlink" title="Supervised Learning: Recognition with $ y_n $"></a>Supervised Learning: Recognition with $ y_n $</h3><p>监督式学习</p>
-<p><img src="http://ow5t5k2fx.bkt.clouddn.com/3.1-.png" alt="image"></p>
-<h3 id="Unsupervised-Learning-Learning-without-with-y-n"><a href="#Unsupervised-Learning-Learning-without-with-y-n" class="headerlink" title="Unsupervised Learning: Learning without with $ y_n $"></a>Unsupervised Learning: Learning without with $ y_n $</h3><p>非监督式学习</p>
-<p><img src="http://ow5t5k2fx.bkt.clouddn.com/3.2-.png" alt="image"></p>
+<p>…until no more mistakes<br>return last $ \mathbf{w} $ (called $ \mathbf{w_{PLA}} $) as g</p>
+<p>修正公式$ \mathbf{w_{t+1}} = \mathbf{w_t} + y_{n(t)} \mathbf{x_{n(t)}} $怎么来的呢？这里需要用到一点线代：</p>
 <ul>
-<li>articles $ \Rightarrow $ topics</li>
-<li>consumer profiles $ \Rightarrow $ consumer groups</li>
+<li>首先，$ sign(\mathbf{w}^T \mathbf{x}) $实际就是向量$ \mathbf{w}  $和向量$ \mathbf{x}  $的内积</li>
+<li>其次，大家知道垂直向量的内积为0，而内积大于0则两向量夹角小于90°，内积小于0则大于90°</li>
+<li>分情况考虑，对于一个数据$ (\mathbf{x_n}, y_n) $， $ sign(\mathbf{w}^T \mathbf{x_n}) \neq y_n$无外乎两种情况：<ul>
+<li>$ -1 \neq +1 $，此时向量$ \mathbf{w} $和$ \mathbf{x_n} $夹角大于90°，而$ y_n  $要求正确的$ \mathbf{w}  $应该是与$ \mathbf{x_n}  $小于90°的，为减小$ \mathbf{w} $和$ \mathbf{x_n} $角度，我们就给$ \mathbf{w} + \mathbf{x_n} $</li>
+<li>$ +1 \neq -1 $，反之同理，为增大角度给$ \mathbf{w} - \mathbf{x_n} $</li>
 </ul>
-<p>常见使用场景：</p>
+</li>
+</ul>
+<p>如下图示</p>
+<p><img src="http://ow5t5k2fx.bkt.clouddn.com/2.2.png" alt="image"></p>
+<p>这里有一点需要说明，$ \mathbf{w_{t+1}} = \mathbf{w_t} + y_{n(t)} \mathbf{x_{n(t)}} $ 虽然不能保证就立马能将角度修正为当前$ y_n $需要的角度，但确是一点一点增大/减小的，而随着循环次数的增加，总归是可以到达$ y_n $需要的角度的。</p>
+<p>Some Remaining Issues of PLA</p>
 <ul>
-<li>clustering 分群/聚类，最常见</li>
-<li>density estimation 密度评估</li>
-<li>outlier detection 离群点检测</li>
+<li>Algorithmic: halt (with no mistake)?<ul>
+<li>naïve cyclic: ??</li>
+<li>random cyclic: ??</li>
+<li>other variant: ??</li>
 </ul>
-<h3 id="Semi-supervised-Learning-Recognition-with-some-y-n"><a href="#Semi-supervised-Learning-Recognition-with-some-y-n" class="headerlink" title="Semi-supervised Learning: Recognition with some $ y_n $"></a>Semi-supervised Learning: Recognition with some $ y_n $</h3><p>半监督式学习</p>
-<p><img src="http://ow5t5k2fx.bkt.clouddn.com/3.3-.png" alt="image"></p>
+</li>
+<li>Learning: $ g \approx f $?<ul>
+<li>on $ D $, if halt, yes (no mistake)</li>
+<li>outside $ D $: ??</li>
+<li>if not halting: ??</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-3-Guarantee-of-PLA"><a href="#2-3-Guarantee-of-PLA" class="headerlink" title="2.3 Guarantee of PLA"></a>2.3 Guarantee of PLA</h2><p>PLA算法的可行性保障</p>
+<h3 id="Linear-Separability"><a href="#Linear-Separability" class="headerlink" title="Linear Separability"></a>Linear Separability</h3><p>首先训练样本$ D $要线性可分</p>
+<p><img src="http://ow5t5k2fx.bkt.clouddn.com/2.3.png" alt="image"></p>
+<h3 id="assume-linear-separable-D-does-PLA-always-halt"><a href="#assume-linear-separable-D-does-PLA-always-halt" class="headerlink" title="assume linear separable $ D $, does PLA always halt?"></a>assume linear separable $ D $, does PLA always halt?</h3><p>证明思路是根据已知条件来求解$ \mathbf{w_t} $和$ \mathbf{w_f} $归一化后的向量内积，越大则两向量越邻近</p>
 <ul>
-<li>face images with a few labeled $ \Rightarrow $ face identifier</li>
-<li>medicine data with a few labeled $ \Rightarrow $ medicine effect predictor</li>
-</ul>
-<h3 id="Reinforcement-Learning-Implicit-y-n-by-goodness-hat-y-n"><a href="#Reinforcement-Learning-Implicit-y-n-by-goodness-hat-y-n" class="headerlink" title="Reinforcement Learning: Implicit $ y_n $ by goodness($ \hat y_n $)"></a>Reinforcement Learning: Implicit $ y_n $ by goodness($ \hat y_n $)</h3><p>强化学习</p>
+<li><p>PLA Fact: $ \mathbf{w_t} $ Gets More Aligned with $ \mathbf{w_f} $</p>
+<p>  linear separable $ D $ $ \Leftrightarrow $ exists perfect $ \mathbf{w_f} $ such that $ y_n = sign( \mathbf{w_f^T} \mathbf{x_n} ) $</p>
 <ul>
-<li>(customer, ad choice, ad click earning) $ \Rightarrow $ ad system</li>
-<li>(cards, strategy, winning amount) $ \Rightarrow $ black jack agent</li>
+<li><p>$ \mathbf{w_f} $ perfect hence every $ \mathbf{x_n} $ correctly away from line: </p>
+<p>  $ y_{n(t)} \mathbf{w_f^T} \mathbf{x_{n(t)}} \ge \min_n y_n \mathbf{w_f^T} \mathbf{x_n} &gt; 0 $</p>
+</li>
+<li><p>$ \mathbf{w_f^T} \mathbf{w_{t+1}} \uparrow $ by updating with any $ (\mathbf{x_{n(t)}}, (\mathbf{y_{n(t)}}) $ </p>
+<p>  $ \mathbf{w_f^T} \mathbf{w_{t+1}} = \mathbf{w_f^T}(\mathbf{w_t} + y_{n(t)} \mathbf{x_{n(t)}}) $</p>
+<p>  $                \ge \mathbf{w_f^T}\mathbf{w_t} + \min_n y_n \mathbf{w_f^T} \mathbf{x_n} $</p>
+<p>  $                &gt; \mathbf{w_f^T}\mathbf{w_t} + 0 $</p>
+<p>$ \mathbf{w_t} $ appears more aligned with $ \mathbf{w_f} $ after update ?? NO, 还需排除长度的因素</p>
+</li>
 </ul>
-<h2 id="3-3-Learning-with-Different-Protocol-f-rightarrow-mathbf-x-n-y-n"><a href="#3-3-Learning-with-Different-Protocol-f-rightarrow-mathbf-x-n-y-n" class="headerlink" title="3.3 Learning with Different Protocol $ f \rightarrow (\mathbf{x_n}, y_n) $"></a>3.3 Learning with Different Protocol $ f \rightarrow (\mathbf{x_n}, y_n) $</h2><p>不同的获取数据方式</p>
-<h3 id="Batch-Learning-all-known-data"><a href="#Batch-Learning-all-known-data" class="headerlink" title="Batch Learning: all known data"></a>Batch Learning: all known data</h3><p>批量学习</p>
-<p>将很多数据一次性给算法 </p>
-<p>a very common protocol</p>
-<h3 id="Online-Learning-sequential-passive-data"><a href="#Online-Learning-sequential-passive-data" class="headerlink" title="Online Learning: sequential (passive) data"></a>Online Learning: sequential (passive) data</h3><p>在线学习</p>
-<p>一笔一笔地把数据喂给算法，如PLA和强化学习</p>
-<p>hypothesis ‘improves’ through receiving data instances sequentially</p>
-<h3 id="Active-Learning-strategically-observed-data"><a href="#Active-Learning-strategically-observed-data" class="headerlink" title="Active Learning: strategically-observed data"></a>Active Learning: strategically-observed data</h3><p>主动学习</p>
-<p>主动提出问题让算法解决</p>
-<p>improve hypothesis with fewer labels (hopefully) by asking questions strategically</p>
-<h2 id="3-4-Learning-with-Different-Input-Space-X"><a href="#3-4-Learning-with-Different-Input-Space-X" class="headerlink" title="3.4 Learning with Different Input Space $ X $"></a>3.4 Learning with Different Input Space $ X $</h2><p>不同的输入（特征）空间</p>
-<h3 id="Concrete-Features"><a href="#Concrete-Features" class="headerlink" title="Concrete Features"></a>Concrete Features</h3><p>具体特征</p>
-<p>concrete features: each dimension of $ X \in R^d $ represents ‘sophisticated physical meaning’</p>
-<p>便于机器学习，经过人类分析提取出的特征，有实用性</p>
-<p><img src="http://ow5t5k2fx.bkt.clouddn.com/3.5.png" alt="image"></p>
-<h3 id="Raw-Features"><a href="#Raw-Features" class="headerlink" title="Raw Features"></a>Raw Features</h3><p>原始特征</p>
-<p>raw features: often need human or machines to convert to concrete ones, simple physical meaning</p>
-<p>很常见，但需要人类或机器转换为具体特征才能用</p>
-<p><img src="http://ow5t5k2fx.bkt.clouddn.com/3.6.png" alt="image"></p>
-<h3 id="Abstract-Features"><a href="#Abstract-Features" class="headerlink" title="Abstract Features"></a>Abstract Features</h3><p>抽象特征</p>
-<p>abstract features: again need ‘feature conversion/extraction/construction’, no physical meaning</p>
-<p>看似毫无意义的数据如ID，更需要抽取特征，困难度更高</p>
+</li>
+<li><p>PLA Fact: $ \mathbf{w_t} $ Does Not Grow Too Fast</p>
+<p>  $ \mathbf{w_t} $ changed only when mistake $ \Leftrightarrow $ $ sign( \mathbf{w_t^T} \mathbf{x_{n(t)}} ) \neq y_{n(t)} $ $ \Leftrightarrow $ $ y_{n(t)} \mathbf{w_t^T} \mathbf{x_{n(t)}} \le 0$</p>
+<ul>
+<li><p>mistake ‘limits’ $ ||\mathbf{w_t}||^2 $ growth, even when updating with ‘longest’ $ \mathbf{x_n} $</p>
+<p>  $ ||\mathbf{w_{t+1}}||^2 = ||\mathbf{w_t} + y_{n(t)} \mathbf{x_{n(t)}} ||^2$</p>
+<p>  $                = ||\mathbf{w_t}||^2 + 2y_{n(t)} \mathbf{w_t^T} \mathbf{x_{n(t)}} + ||y_{n(t)} \mathbf{x_{n(t)}} ||^2$</p>
+<p>  $                \le ||\mathbf{w_t}||^2 + 0 + ||y_{n(t)} \mathbf{x_{n(t)}} ||^2$</p>
+<p>  $                \le ||\mathbf{w_t}||^2 + \max_n||y_n \mathbf{x_n} ||^2$</p>
+<p>  $                = ||\mathbf{w_t}||^2 + \max_n|| \mathbf{x_n} ||^2$</p>
+<p>start from $ \mathbf{w_0} = 0 $, after $ T $ mistake corrections,<br>  $ \frac {\mathbf{w_f^T}} {||\mathbf{w_f}||} \frac {\mathbf{w_T}} {||\mathbf{w_T}||} \ge \sqrt{T} \cdot C $</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="以下简单计算常数-C-以及-T-的上界"><a href="#以下简单计算常数-C-以及-T-的上界" class="headerlink" title="以下简单计算常数 $ C $以及 $ T $的上界"></a>以下简单计算常数 $ C $以及 $ T $的上界</h3><p>$ \mathbf{w_f^T} \mathbf{w_T} = \mathbf{w_f^T} (\mathbf{w_{T-1}} + y_n \mathbf{x_n})$</p>
+<p>$             = \mathbf{w_f^T} \mathbf{w_{T-1}} + y_n \mathbf{w_f^T} \mathbf{x_n} $</p>
+<p>$             \ge \mathbf{w_f^T} \mathbf{w_{T-1}} + \min_n y_n \mathbf{w_f^T} \mathbf{x_n} $</p>
+<p>$             = \mathbf{w_f^T} \mathbf{w_0} + T\min_n y_n \mathbf{w_f^T} \mathbf{x_n} $</p>
+<p>$             = T\min_n y_n \mathbf{w_f^T} \mathbf{x_n} $</p>
+<p>$ ||\mathbf{w_T}||^2 = ||\mathbf{w_{T-1}} + y_{n(T-1)} \mathbf{x_{n(T-1)}} ||^2$</p>
+<p>$             = ||\mathbf{w_{T-1}}||^2 + 2y_{n(T-1)} \mathbf{w_{T-1}^T} \mathbf{x_{n(T-1)}} + ||y_{n(T-1)} \mathbf{x_{n(T-1)}} ||^2$</p>
+<p>$             \le ||\mathbf{w_{T-1}}||^2 +||y_{n(T-1)} \mathbf{x_{n(T-1)}} ||^2$</p>
+<p>$             \le ||\mathbf{w_{T-1}}||^2 + \max_n||y_n \mathbf{x_n} ||^2$</p>
+<p>$             = ||\mathbf{w_{T-1}}||^2 + \max_n|| \mathbf{x_n} ||^2$</p>
+<p>$             = ||\mathbf{w_0}||^2 + T \max_n|| \mathbf{x_n} ||^2$</p>
+<p>$             = T \max_n|| \mathbf{x_n} ||^2$</p>
+<p>$ \frac {\mathbf{w_f^T}} {||\mathbf{w_f}||} \frac {\mathbf{w_T}} {||\mathbf{w_T}||} \ge \frac {T\min_n y_n \mathbf{w_f^T} \mathbf{x_n}} {||\mathbf{w_f}|| \sqrt{T \max_n|| \mathbf{x_n} ||^2}}$</p>
+<p>$                 = \frac {T\min_n y_n \mathbf{w_f^T} \mathbf{x_n}} {||\mathbf{w_f}|| \sqrt{T \max_n|| \mathbf{x_n} ||^2}}$</p>
+<p>$                 = \sqrt {T}\frac {\min_n y_n \frac {\mathbf{w_f^T}} {||\mathbf{w_f}||} \mathbf{x_n}} { \sqrt{\max_n|| \mathbf{x_n} ||^2}}$</p>
+<p>$ 1 \ge \frac {\mathbf{w_f^T}} {||\mathbf{w_f}||} \frac {\mathbf{w_T}} {||\mathbf{w_T}||} $ $ \Longrightarrow $ $ T \le \frac {\max_n|| \mathbf{x_n}||^2} {({\min_n y_n \frac {\mathbf{w_f^T}} {||\mathbf{w_f}||} \mathbf{x_n}})^2} $</p>
+<p>可知，$ \mathbf{w_t} $是不断缓慢接近$ \mathbf{w_f} $的，并且T是有上限的，也即在数据样本线性可分的情况下，PLA最终是会在有限的次数内找到一个接近$ f $的$ g $并停下来的。</p>
+<h2 id="2-4-None-Separable-Data"><a href="#2-4-None-Separable-Data" class="headerlink" title="2.4 None Separable Data"></a>2.4 None Separable Data</h2><p>线性不可分的数据</p>
+<p>PLA的缺陷：</p>
+<ul>
+<li>‘assumes’ linear separable $ D $ to halt —— property unknown in advance</li>
+<li>not fully sure how long halting takes ($ T $ depends on $ \mathbf{w_f} $) —— though practically fast</li>
+</ul>
+<p>样本中通常会混入noise，如录入错误、判断错误等，这种情况下原本线性可分的数据都会变成线性不可分，如下图。</p>
+<p><img src="http://ow5t5k2fx.bkt.clouddn.com/2.5.png" alt="image"></p>
+<ul>
+<li>assume ‘little’ noise: $ y_n = f(x_n) $ usually</li>
+<li>if so, $ g \approx f $ on $ D $ $ \Leftrightarrow $ $ y_n = g(x_n) $ usually</li>
+<li>try, $ \mathbf{w_g} \leftarrow \arg\min_w \sum_{n=1}^N[y_n \neq sign(\mathbf{w^T \mathbf{x_n}})]$  —— <strong>NP-hard to solve</strong></li>
+</ul>
+<p>近似的求解算法 —— Pocket Algorithm</p>
+<p>modify PLA algorithm by keeping best weights in pocket</p>
+<p>initialize pocket weights $ \mathbf{\hat w}$, for t = 0, 1, …</p>
+<ul>
+<li>find a (random) mistake of $ \mathbf{w_t} $ called $ (x_{n(t)}, y_{n(t)}) $</li>
+<li>(try to )correct the mistake by $ \mathbf{w_{t+1}} \leftarrow \mathbf{w_t} + y_{n(t)} \mathbf{x_{n(t)}} $ </li>
+<li>if $ \mathbf{w_{t+1}} $ makes fewer mistakes than $ \mathbf{\hat w}$, replace $ \mathbf{\hat w}$ by $ \mathbf{w_{t+1}} $</li>
+</ul>
+<p>…until enough iterations<br>return$ \mathbf{\hat w}$ (called $ \mathbf{w_{POCKET}} $) as g</p>
 
       
     </div>
@@ -518,7 +586,9 @@
           
             <a href="/tags/笔记/" rel="tag"># 笔记</a>
           
-            <a href="/tags/概念/" rel="tag"># 概念</a>
+            <a href="/tags/PLA/" rel="tag"># PLA</a>
+          
+            <a href="/tags/Pocket/" rel="tag"># Pocket</a>
           
         </div>
       
@@ -531,8 +601,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/22/机器学习基石2/" rel="next" title="机器学习基石2——Learning to Answer Yes or No">
-                <i class="fa fa-chevron-left"></i> 机器学习基石2——Learning to Answer Yes or No
+              <a href="/2017/09/16/机器学习基石1/" rel="next" title="机器学习基石1——The Learning Problem">
+                <i class="fa fa-chevron-left"></i> 机器学习基石1——The Learning Problem
               </a>
             
           </div>
@@ -540,6 +610,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/20/机器学习基石3/" rel="prev" title="机器学习基石3——Types of Learning">
+                机器学习基石3——Types of Learning <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -643,7 +717,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -678,7 +752,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Learning-with-Different-Output-Space-Y"><span class="nav-number">1.</span> <span class="nav-text">3.1 Learning with Different Output Space $ Y $</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Binary-Classification"><span class="nav-number">1.1.</span> <span class="nav-text">Binary Classification</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multiclass-Classification"><span class="nav-number">1.2.</span> <span class="nav-text">Multiclass Classification</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Regression"><span class="nav-number">1.3.</span> <span class="nav-text">Regression</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Structured-Learning"><span class="nav-number">1.4.</span> <span class="nav-text">Structured Learning</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Learning-with-Different-Data-Label-y-n"><span class="nav-number">2.</span> <span class="nav-text">3.2 Learning with Different Data Label $ y_n $</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Supervised-Learning-Recognition-with-y-n"><span class="nav-number">2.1.</span> <span class="nav-text">Supervised Learning: Recognition with $ y_n $</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unsupervised-Learning-Learning-without-with-y-n"><span class="nav-number">2.2.</span> <span class="nav-text">Unsupervised Learning: Learning without with $ y_n $</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Semi-supervised-Learning-Recognition-with-some-y-n"><span class="nav-number">2.3.</span> <span class="nav-text">Semi-supervised Learning: Recognition with some $ y_n $</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reinforcement-Learning-Implicit-y-n-by-goodness-hat-y-n"><span class="nav-number">2.4.</span> <span class="nav-text">Reinforcement Learning: Implicit $ y_n $ by goodness($ \hat y_n $)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Learning-with-Different-Protocol-f-rightarrow-mathbf-x-n-y-n"><span class="nav-number">3.</span> <span class="nav-text">3.3 Learning with Different Protocol $ f \rightarrow (\mathbf{x_n}, y_n) $</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Batch-Learning-all-known-data"><span class="nav-number">3.1.</span> <span class="nav-text">Batch Learning: all known data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Online-Learning-sequential-passive-data"><span class="nav-number">3.2.</span> <span class="nav-text">Online Learning: sequential (passive) data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Active-Learning-strategically-observed-data"><span class="nav-number">3.3.</span> <span class="nav-text">Active Learning: strategically-observed data</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Learning-with-Different-Input-Space-X"><span class="nav-number">4.</span> <span class="nav-text">3.4 Learning with Different Input Space $ X $</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Concrete-Features"><span class="nav-number">4.1.</span> <span class="nav-text">Concrete Features</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Raw-Features"><span class="nav-number">4.2.</span> <span class="nav-text">Raw Features</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract-Features"><span class="nav-number">4.3.</span> <span class="nav-text">Abstract Features</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Perceptron-Hypothesis-Set"><span class="nav-number">1.</span> <span class="nav-text">2.1 Perceptron Hypothesis Set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Perceptron-Learning-Algorithm-PLA"><span class="nav-number">2.</span> <span class="nav-text">2.2 Perceptron Learning Algorithm (PLA)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Guarantee-of-PLA"><span class="nav-number">3.</span> <span class="nav-text">2.3 Guarantee of PLA</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linear-Separability"><span class="nav-number">3.1.</span> <span class="nav-text">Linear Separability</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#assume-linear-separable-D-does-PLA-always-halt"><span class="nav-number">3.2.</span> <span class="nav-text">assume linear separable $ D $, does PLA always halt?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以下简单计算常数-C-以及-T-的上界"><span class="nav-number">3.3.</span> <span class="nav-text">以下简单计算常数 $ C $以及 $ T $的上界</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-None-Separable-Data"><span class="nav-number">4.</span> <span class="nav-text">2.4 None Separable Data</span></a></li></ol></div>
             
 
           </div>

@@ -4,7 +4,7 @@
     
     <entry>
       <title><![CDATA[机器学习基石3——Types of Learning]]></title>
-      <url>/2017/09/22/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B33/</url>
+      <url>/2017/09/20/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B33/</url>
       <content type="html"><![CDATA[<h2 id="3-1-Learning-with-Different-Output-Space-Y"><a href="#3-1-Learning-with-Different-Output-Space-Y" class="headerlink" title="3.1 Learning with Different Output Space $ Y $"></a>3.1 Learning with Different Output Space $ Y $</h2><p>不同的输出空间</p>
 <h3 id="Binary-Classification"><a href="#Binary-Classification" class="headerlink" title="Binary Classification"></a>Binary Classification</h3><p>二元分类</p>
 <p>$ Y = {-1, +1} $</p>
@@ -91,11 +91,11 @@
         
         <tags>
             
+            <tag> 概念 </tag>
+            
             <tag> 机器学习 </tag>
             
             <tag> 笔记 </tag>
-            
-            <tag> 概念 </tag>
             
         </tags>
         
@@ -103,7 +103,7 @@
     
     <entry>
       <title><![CDATA[机器学习基石2——Learning to Answer Yes or No]]></title>
-      <url>/2017/09/22/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B32/</url>
+      <url>/2017/09/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B32/</url>
       <content type="html"><![CDATA[<h2 id="2-1-Perceptron-Hypothesis-Set"><a href="#2-1-Perceptron-Hypothesis-Set" class="headerlink" title="2.1 Perceptron Hypothesis Set"></a>2.1 Perceptron Hypothesis Set</h2><p>感知器假设空间</p>
 <p>依旧以银行核发信用卡为例，讲述Perceptron的$ H $。</p>
 <ul>
@@ -117,10 +117,10 @@
 <p>如同考试打分，每道题有个特定分数，即权重($w$)，再给定一个及格线，即阈值($threshold$)。</p>
 <p>以下仅为了符号方便进行数学简化：</p>
 <p>$ h(x) = sign((\sum_{i=1}^d w_i x_i) - threshold) $</p>
-<p>$ \ \ \ \ \ \ \ \ = sign((\sum_{i=1}^d w_i x_i) + (-threshold * 1)) $</p>
-<p>$ \ \ \ \ \ \ \ \ = sign((\sum_{i=1}^d w_i x_i) + (w_0 * x_0)) $</p>
-<p>$ \ \ \ \ \ \ \ \ = sign(\sum_{i=0}^d w_i x_i) $</p>
-<p>$ \ \ \ \ \ \ \ \ = sign(\mathbf{w}^T \mathbf{x})$</p>
+<p>$         = sign((\sum_{i=1}^d w_i x_i) + (-threshold * 1)) $</p>
+<p>$         = sign((\sum_{i=1}^d w_i x_i) + (w_0 * x_0)) $</p>
+<p>$         = sign(\sum_{i=0}^d w_i x_i) $</p>
+<p>$         = sign(\mathbf{w}^T \mathbf{x})$</p>
 <p>如此，不同的$h(x)$对应不同的向量$\mathbf{w}$，也可以说假设空间$H$即向量$\mathbf{w}$的取值范围。</p>
 <p>用直观一点的图像来解释这个感知器假设函数。</p>
 <p>为便于观察，特征数量限制在两个，以将图像限定在二维平面内，此时的$ h $函数：$ h(x) = sign(w_0 + w_1 x_1 + w_2 x_2) $</p>
@@ -144,11 +144,11 @@
 <p>Perceptron Learning Algorithm</p>
 <p>Start from some $ \mathbf{w_0} $ (say, $ \mathbf{0} $), for t = 0, 1, …</p>
 <ul>
-<li>find a mistake of $ \mathbf{w<em>t} $ called $ (x</em>{n(t)}, y_{n(t)}) $, $ sign(\mathbf{w<em>t}^T \mathbf{x</em>{n(t)}}) \neq y_{n(t)}$</li>
-<li>(try to )correct the mistake by $ \mathbf{w_{t+1}} \leftarrow \mathbf{w<em>t} + y</em>{n(t)} \mathbf{x_{n(t)}} $ </li>
+<li>find a mistake of $ \mathbf{w_t} $ called $ (x_{n(t)}, y_{n(t)}) $, $ sign(\mathbf{w_t}^T \mathbf{x_{n(t)}}) \neq y_{n(t)}$</li>
+<li>(try to )correct the mistake by $ \mathbf{w_{t+1}} \leftarrow \mathbf{w_t} + y_{n(t)} \mathbf{x_{n(t)}} $ </li>
 </ul>
 <p>…until no more mistakes<br>return last $ \mathbf{w} $ (called $ \mathbf{w_{PLA}} $) as g</p>
-<p>修正公式$ \mathbf{w_{t+1}} = \mathbf{w<em>t} + y</em>{n(t)} \mathbf{x_{n(t)}} $怎么来的呢？这里需要用到一点线代：</p>
+<p>修正公式$ \mathbf{w_{t+1}} = \mathbf{w_t} + y_{n(t)} \mathbf{x_{n(t)}} $怎么来的呢？这里需要用到一点线代：</p>
 <ul>
 <li>首先，$ sign(\mathbf{w}^T \mathbf{x}) $实际就是向量$ \mathbf{w}  $和向量$ \mathbf{x}  $的内积</li>
 <li>其次，大家知道垂直向量的内积为0，而内积大于0则两向量夹角小于90°，内积小于0则大于90°</li>
@@ -160,7 +160,7 @@
 </ul>
 <p>如下图示</p>
 <p><img src="http://ow5t5k2fx.bkt.clouddn.com/2.2.png" alt="image"></p>
-<p>这里有一点需要说明，$ \mathbf{w_{t+1}} = \mathbf{w<em>t} + y</em>{n(t)} \mathbf{x_{n(t)}} $ 虽然不能保证就立马能将角度修正为当前$ y_n $需要的角度，但确是一点一点增大/减小的，而随着循环次数的增加，总归是可以到达$ y_n $需要的角度的。</p>
+<p>这里有一点需要说明，$ \mathbf{w_{t+1}} = \mathbf{w_t} + y_{n(t)} \mathbf{x_{n(t)}} $ 虽然不能保证就立马能将角度修正为当前$ y_n $需要的角度，但确是一点一点增大/减小的，而随着循环次数的增加，总归是可以到达$ y_n $需要的角度的。</p>
 <p>Some Remaining Issues of PLA</p>
 <ul>
 <li>Algorithmic: halt (with no mistake)?<ul>
@@ -185,45 +185,45 @@
 <p>  linear separable $ D $ $ \Leftrightarrow $ exists perfect $ \mathbf{w_f} $ such that $ y_n = sign( \mathbf{w_f^T} \mathbf{x_n} ) $</p>
 <ul>
 <li><p>$ \mathbf{w_f} $ perfect hence every $ \mathbf{x_n} $ correctly away from line: </p>
-<p>  $ y_{n(t)} \mathbf{w<em>f^T} \mathbf{x</em>{n(t)}} \ge \min_n y_n \mathbf{w_f^T} \mathbf{x_n} &gt; 0 $</p>
+<p>  $ y_{n(t)} \mathbf{w_f^T} \mathbf{x_{n(t)}} \ge \min_n y_n \mathbf{w_f^T} \mathbf{x_n} &gt; 0 $</p>
 </li>
-<li><p>$ \mathbf{w<em>f^T} \mathbf{w</em>{t+1}} \uparrow $ by updating with any $ (\mathbf{x<em>{n(t)}}, (\mathbf{y</em>{n(t)}}) $ </p>
-<p>  $ \mathbf{w<em>f^T} \mathbf{w</em>{t+1}} = \mathbf{w_f^T}(\mathbf{w<em>t} + y</em>{n(t)} \mathbf{x_{n(t)}}) $</p>
-<p>  $ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ge \mathbf{w_f^T}\mathbf{w_t} + \min_n y_n \mathbf{w_f^T} \mathbf{x_n} $</p>
-<p>  $ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ &gt; \mathbf{w_f^T}\mathbf{w_t} + 0 $</p>
+<li><p>$ \mathbf{w_f^T} \mathbf{w_{t+1}} \uparrow $ by updating with any $ (\mathbf{x_{n(t)}}, (\mathbf{y_{n(t)}}) $ </p>
+<p>  $ \mathbf{w_f^T} \mathbf{w_{t+1}} = \mathbf{w_f^T}(\mathbf{w_t} + y_{n(t)} \mathbf{x_{n(t)}}) $</p>
+<p>  $                \ge \mathbf{w_f^T}\mathbf{w_t} + \min_n y_n \mathbf{w_f^T} \mathbf{x_n} $</p>
+<p>  $                &gt; \mathbf{w_f^T}\mathbf{w_t} + 0 $</p>
 <p>$ \mathbf{w_t} $ appears more aligned with $ \mathbf{w_f} $ after update ?? NO, 还需排除长度的因素</p>
 </li>
 </ul>
 </li>
 <li><p>PLA Fact: $ \mathbf{w_t} $ Does Not Grow Too Fast</p>
-<p>  $ \mathbf{w_t} $ changed only when mistake $ \Leftrightarrow $ $ sign( \mathbf{w<em>t^T} \mathbf{x</em>{n(t)}} ) \neq y<em>{n(t)} $ $ \Leftrightarrow $ $ y</em>{n(t)} \mathbf{w<em>t^T} \mathbf{x</em>{n(t)}} \le 0$</p>
+<p>  $ \mathbf{w_t} $ changed only when mistake $ \Leftrightarrow $ $ sign( \mathbf{w_t^T} \mathbf{x_{n(t)}} ) \neq y_{n(t)} $ $ \Leftrightarrow $ $ y_{n(t)} \mathbf{w_t^T} \mathbf{x_{n(t)}} \le 0$</p>
 <ul>
 <li><p>mistake ‘limits’ $ ||\mathbf{w_t}||^2 $ growth, even when updating with ‘longest’ $ \mathbf{x_n} $</p>
-<p>  $ ||\mathbf{w_{t+1}}||^2 = ||\mathbf{w<em>t} + y</em>{n(t)} \mathbf{x_{n(t)}} ||^2$</p>
-<p>  $ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ = ||\mathbf{w<em>t}||^2 + 2y</em>{n(t)} \mathbf{w<em>t^T} \mathbf{x</em>{n(t)}} + ||y<em>{n(t)} \mathbf{x</em>{n(t)}} ||^2$</p>
-<p>  $ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \le ||\mathbf{w<em>t}||^2 + 0 + ||y</em>{n(t)} \mathbf{x_{n(t)}} ||^2$</p>
-<p>  $ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \le ||\mathbf{w_t}||^2 + \max_n||y_n \mathbf{x_n} ||^2$</p>
-<p>  $ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ = ||\mathbf{w_t}||^2 + \max_n|| \mathbf{x_n} ||^2$</p>
+<p>  $ ||\mathbf{w_{t+1}}||^2 = ||\mathbf{w_t} + y_{n(t)} \mathbf{x_{n(t)}} ||^2$</p>
+<p>  $                = ||\mathbf{w_t}||^2 + 2y_{n(t)} \mathbf{w_t^T} \mathbf{x_{n(t)}} + ||y_{n(t)} \mathbf{x_{n(t)}} ||^2$</p>
+<p>  $                \le ||\mathbf{w_t}||^2 + 0 + ||y_{n(t)} \mathbf{x_{n(t)}} ||^2$</p>
+<p>  $                \le ||\mathbf{w_t}||^2 + \max_n||y_n \mathbf{x_n} ||^2$</p>
+<p>  $                = ||\mathbf{w_t}||^2 + \max_n|| \mathbf{x_n} ||^2$</p>
 <p>start from $ \mathbf{w_0} = 0 $, after $ T $ mistake corrections,<br>  $ \frac {\mathbf{w_f^T}} {||\mathbf{w_f}||} \frac {\mathbf{w_T}} {||\mathbf{w_T}||} \ge \sqrt{T} \cdot C $</p>
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="以下简单计算常数-C-以及-T-的上界"><a href="#以下简单计算常数-C-以及-T-的上界" class="headerlink" title="以下简单计算常数 $ C $以及 $ T $的上界"></a>以下简单计算常数 $ C $以及 $ T $的上界</h3><p>$ \mathbf{w_f^T} \mathbf{w_T} = \mathbf{w<em>f^T} (\mathbf{w</em>{T-1}} + y_n \mathbf{x_n})$</p>
-<p>$ \ \ \ \ \ \ \ \ \ \ \ \ = \mathbf{w<em>f^T} \mathbf{w</em>{T-1}} + y_n \mathbf{w_f^T} \mathbf{x_n} $</p>
-<p>$ \ \ \ \ \ \ \ \ \ \ \ \ \ge \mathbf{w<em>f^T} \mathbf{w</em>{T-1}} + \min_n y_n \mathbf{w_f^T} \mathbf{x_n} $</p>
-<p>$ \ \ \ \ \ \ \ \ \ \ \ \ = \mathbf{w_f^T} \mathbf{w_0} + T\min_n y_n \mathbf{w_f^T} \mathbf{x_n} $</p>
-<p>$ \ \ \ \ \ \ \ \ \ \ \ \ = T\min_n y_n \mathbf{w_f^T} \mathbf{x_n} $</p>
-<p>$ ||\mathbf{w<em>T}||^2 = ||\mathbf{w</em>{T-1}} + y<em>{n(T-1)} \mathbf{x</em>{n(T-1)}} ||^2$</p>
-<p>$ \ \ \ \ \ \ \ \ \ \ \ \ = ||\mathbf{w<em>{T-1}}||^2 + 2y</em>{n(T-1)} \mathbf{w<em>{T-1}^T} \mathbf{x</em>{n(T-1)}} + ||y<em>{n(T-1)} \mathbf{x</em>{n(T-1)}} ||^2$</p>
-<p>$ \ \ \ \ \ \ \ \ \ \ \ \ \le ||\mathbf{w<em>{T-1}}||^2 +||y</em>{n(T-1)} \mathbf{x_{n(T-1)}} ||^2$</p>
-<p>$ \ \ \ \ \ \ \ \ \ \ \ \ \le ||\mathbf{w_{T-1}}||^2 + \max_n||y_n \mathbf{x_n} ||^2$</p>
-<p>$ \ \ \ \ \ \ \ \ \ \ \ \ = ||\mathbf{w_{T-1}}||^2 + \max_n|| \mathbf{x_n} ||^2$</p>
-<p>$ \ \ \ \ \ \ \ \ \ \ \ \ = ||\mathbf{w_0}||^2 + T \max_n|| \mathbf{x_n} ||^2$</p>
-<p>$ \ \ \ \ \ \ \ \ \ \ \ \ = T \max_n|| \mathbf{x_n} ||^2$</p>
+<h3 id="以下简单计算常数-C-以及-T-的上界"><a href="#以下简单计算常数-C-以及-T-的上界" class="headerlink" title="以下简单计算常数 $ C $以及 $ T $的上界"></a>以下简单计算常数 $ C $以及 $ T $的上界</h3><p>$ \mathbf{w_f^T} \mathbf{w_T} = \mathbf{w_f^T} (\mathbf{w_{T-1}} + y_n \mathbf{x_n})$</p>
+<p>$             = \mathbf{w_f^T} \mathbf{w_{T-1}} + y_n \mathbf{w_f^T} \mathbf{x_n} $</p>
+<p>$             \ge \mathbf{w_f^T} \mathbf{w_{T-1}} + \min_n y_n \mathbf{w_f^T} \mathbf{x_n} $</p>
+<p>$             = \mathbf{w_f^T} \mathbf{w_0} + T\min_n y_n \mathbf{w_f^T} \mathbf{x_n} $</p>
+<p>$             = T\min_n y_n \mathbf{w_f^T} \mathbf{x_n} $</p>
+<p>$ ||\mathbf{w_T}||^2 = ||\mathbf{w_{T-1}} + y_{n(T-1)} \mathbf{x_{n(T-1)}} ||^2$</p>
+<p>$             = ||\mathbf{w_{T-1}}||^2 + 2y_{n(T-1)} \mathbf{w_{T-1}^T} \mathbf{x_{n(T-1)}} + ||y_{n(T-1)} \mathbf{x_{n(T-1)}} ||^2$</p>
+<p>$             \le ||\mathbf{w_{T-1}}||^2 +||y_{n(T-1)} \mathbf{x_{n(T-1)}} ||^2$</p>
+<p>$             \le ||\mathbf{w_{T-1}}||^2 + \max_n||y_n \mathbf{x_n} ||^2$</p>
+<p>$             = ||\mathbf{w_{T-1}}||^2 + \max_n|| \mathbf{x_n} ||^2$</p>
+<p>$             = ||\mathbf{w_0}||^2 + T \max_n|| \mathbf{x_n} ||^2$</p>
+<p>$             = T \max_n|| \mathbf{x_n} ||^2$</p>
 <p>$ \frac {\mathbf{w_f^T}} {||\mathbf{w_f}||} \frac {\mathbf{w_T}} {||\mathbf{w_T}||} \ge \frac {T\min_n y_n \mathbf{w_f^T} \mathbf{x_n}} {||\mathbf{w_f}|| \sqrt{T \max_n|| \mathbf{x_n} ||^2}}$</p>
-<p>$ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ = \frac {T\min_n y_n \mathbf{w_f^T} \mathbf{x_n}} {||\mathbf{w_f}|| \sqrt{T \max_n|| \mathbf{x_n} ||^2}}$</p>
-<p>$ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ = \sqrt {T}\frac {\min_n y_n \frac {\mathbf{w_f^T}} {||\mathbf{w_f}||} \mathbf{x_n}} { \sqrt{\max_n|| \mathbf{x_n} ||^2}}$</p>
+<p>$                 = \frac {T\min_n y_n \mathbf{w_f^T} \mathbf{x_n}} {||\mathbf{w_f}|| \sqrt{T \max_n|| \mathbf{x_n} ||^2}}$</p>
+<p>$                 = \sqrt {T}\frac {\min_n y_n \frac {\mathbf{w_f^T}} {||\mathbf{w_f}||} \mathbf{x_n}} { \sqrt{\max_n|| \mathbf{x_n} ||^2}}$</p>
 <p>$ 1 \ge \frac {\mathbf{w_f^T}} {||\mathbf{w_f}||} \frac {\mathbf{w_T}} {||\mathbf{w_T}||} $ $ \Longrightarrow $ $ T \le \frac {\max_n|| \mathbf{x_n}||^2} {({\min_n y_n \frac {\mathbf{w_f^T}} {||\mathbf{w_f}||} \mathbf{x_n}})^2} $</p>
 <p>可知，$ \mathbf{w_t} $是不断缓慢接近$ \mathbf{w_f} $的，并且T是有上限的，也即在数据样本线性可分的情况下，PLA最终是会在有限的次数内找到一个接近$ f $的$ g $并停下来的。</p>
 <h2 id="2-4-None-Separable-Data"><a href="#2-4-None-Separable-Data" class="headerlink" title="2.4 None Separable Data"></a>2.4 None Separable Data</h2><p>线性不可分的数据</p>
@@ -237,15 +237,15 @@
 <ul>
 <li>assume ‘little’ noise: $ y_n = f(x_n) $ usually</li>
 <li>if so, $ g \approx f $ on $ D $ $ \Leftrightarrow $ $ y_n = g(x_n) $ usually</li>
-<li>try, $ \mathbf{w_g} \leftarrow \arg\min<em>w \sum</em>{n=1}^N[y_n \neq sign(\mathbf{w^T \mathbf{x_n}})]$  —— <strong>NP-hard to solve</strong></li>
+<li>try, $ \mathbf{w_g} \leftarrow \arg\min_w \sum_{n=1}^N[y_n \neq sign(\mathbf{w^T \mathbf{x_n}})]$  —— <strong>NP-hard to solve</strong></li>
 </ul>
 <p>近似的求解算法 —— Pocket Algorithm</p>
 <p>modify PLA algorithm by keeping best weights in pocket</p>
 <p>initialize pocket weights $ \mathbf{\hat w}$, for t = 0, 1, …</p>
 <ul>
-<li>find a (random) mistake of $ \mathbf{w<em>t} $ called $ (x</em>{n(t)}, y_{n(t)}) $</li>
-<li>(try to )correct the mistake by $ \mathbf{w_{t+1}} \leftarrow \mathbf{w<em>t} + y</em>{n(t)} \mathbf{x_{n(t)}} $ </li>
-<li>if $ \mathbf{w<em>{t+1}} $ makes fewer mistakes than $ \mathbf{\hat w}$, replace $ \mathbf{\hat w}$ by $ \mathbf{w</em>{t+1}} $</li>
+<li>find a (random) mistake of $ \mathbf{w_t} $ called $ (x_{n(t)}, y_{n(t)}) $</li>
+<li>(try to )correct the mistake by $ \mathbf{w_{t+1}} \leftarrow \mathbf{w_t} + y_{n(t)} \mathbf{x_{n(t)}} $ </li>
+<li>if $ \mathbf{w_{t+1}} $ makes fewer mistakes than $ \mathbf{\hat w}$, replace $ \mathbf{\hat w}$ by $ \mathbf{w_{t+1}} $</li>
 </ul>
 <p>…until enough iterations<br>return$ \mathbf{\hat w}$ (called $ \mathbf{w_{POCKET}} $) as g</p>
 ]]></content>
@@ -273,7 +273,7 @@
     
     <entry>
       <title><![CDATA[机器学习基石1——The Learning Problem]]></title>
-      <url>/2017/09/22/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B31/</url>
+      <url>/2017/09/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B31/</url>
       <content type="html"><![CDATA[<h2 id="1-1-Course-Introduction"><a href="#1-1-Course-Introduction" class="headerlink" title="1.1 Course Introduction"></a>1.1 Course Introduction</h2><p>课程简介</p>
 <h3 id="Foundation-Oriented-基础型"><a href="#Foundation-Oriented-基础型" class="headerlink" title="Foundation Oriented 基础型"></a>Foundation Oriented 基础型</h3><p>What every machine learning user should know:</p>
 <ul>
@@ -368,13 +368,13 @@
         
         <tags>
             
+            <tag> 概念 </tag>
+            
             <tag> 机器学习 </tag>
             
             <tag> 笔记 </tag>
             
             <tag> 课程简介 </tag>
-            
-            <tag> 概念 </tag>
             
         </tags>
         
@@ -382,7 +382,7 @@
     
     <entry>
       <title><![CDATA[NP问题简述]]></title>
-      <url>/2017/09/22/NP%E9%97%AE%E9%A2%98%E7%AE%80%E8%BF%B0/</url>
+      <url>/2017/09/14/NP%E9%97%AE%E9%A2%98%E7%AE%80%E8%BF%B0/</url>
       <content type="html"><![CDATA[<h3 id="首先，阐明一个概念，时间复杂度。"><a href="#首先，阐明一个概念，时间复杂度。" class="headerlink" title="首先，阐明一个概念，时间复杂度。"></a>首先，阐明一个概念，时间复杂度。</h3><p>时间复杂度，指的是当某个问题的规模扩大后，程序解决它需要耗费的时间的增长曲线。</p>
 <ul>
 <li>常数级，$O(1)$：程序处理某个问题所花费的时间与处理数据的规模没关系。通俗点说，就是当我的规模增长到原先的千百倍后，处理这个问题的时间仍旧不变。</li>
@@ -441,9 +441,9 @@
         
         <tags>
             
-            <tag> 概念 </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> 概念 </tag>
             
         </tags>
         
@@ -451,7 +451,7 @@
     
     <entry>
       <title><![CDATA[Hello World]]></title>
-      <url>/2017/09/14/hello-world/</url>
+      <url>/2017/09/12/hello-world/</url>
       <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>

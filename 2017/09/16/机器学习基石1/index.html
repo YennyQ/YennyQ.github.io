@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="机器学习,笔记,PLA,Pocket," />
+  <meta name="keywords" content="概念,机器学习,笔记,课程简介," />
 
 
 
@@ -95,23 +95,24 @@
 
 
 
-<meta name="description" content="2.1 Perceptron Hypothesis Set感知器假设空间 依旧以银行核发信用卡为例，讲述Perceptron的$ H $。  For $ x = (x_1, x_2, \cdots, x_d) $ ——‘features of customer’, compute a weighted ‘score’ and  approve credit if $ \sum_{i=1}^d w_">
-<meta name="keywords" content="机器学习,笔记,PLA,Pocket">
+<meta name="description" content="1.1 Course Introduction课程简介 Foundation Oriented 基础型What every machine learning user should know:  philosophical illustrations key theory core techniques usage in practice  介绍了要掌握机器学习需要学好的四个方面：哲学思想、理论工">
+<meta name="keywords" content="概念,机器学习,笔记,课程简介">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习基石2——Learning to Answer Yes or No">
-<meta property="og:url" content="http://yoursite.com/2017/09/22/机器学习基石2/index.html">
+<meta property="og:title" content="机器学习基石1——The Learning Problem">
+<meta property="og:url" content="http://yoursite.com/2017/09/16/机器学习基石1/index.html">
 <meta property="og:site_name" content="YennyQ&#39;s Note">
-<meta property="og:description" content="2.1 Perceptron Hypothesis Set感知器假设空间 依旧以银行核发信用卡为例，讲述Perceptron的$ H $。  For $ x = (x_1, x_2, \cdots, x_d) $ ——‘features of customer’, compute a weighted ‘score’ and  approve credit if $ \sum_{i=1}^d w_">
+<meta property="og:description" content="1.1 Course Introduction课程简介 Foundation Oriented 基础型What every machine learning user should know:  philosophical illustrations key theory core techniques usage in practice  介绍了要掌握机器学习需要学好的四个方面：哲学思想、理论工">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ow5t5k2fx.bkt.clouddn.com/2.1.png">
-<meta property="og:image" content="http://ow5t5k2fx.bkt.clouddn.com/2.2.png">
-<meta property="og:image" content="http://ow5t5k2fx.bkt.clouddn.com/2.3.png">
-<meta property="og:image" content="http://ow5t5k2fx.bkt.clouddn.com/2.5.png">
-<meta property="og:updated_time" content="2017-09-22T12:10:03.153Z">
+<meta property="og:image" content="http://ow5t5k2fx.bkt.clouddn.com/1.1-learning.png">
+<meta property="og:image" content="http://ow5t5k2fx.bkt.clouddn.com/1.2-machine_learning.png">
+<meta property="og:image" content="http://ow5t5k2fx.bkt.clouddn.com/1.3-skill.png">
+<meta property="og:image" content="http://ow5t5k2fx.bkt.clouddn.com/1.4-simple_flow.png">
+<meta property="og:image" content="http://ow5t5k2fx.bkt.clouddn.com/1.5-detail_flow.png">
+<meta property="og:updated_time" content="2017-09-22T13:21:36.349Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="机器学习基石2——Learning to Answer Yes or No">
-<meta name="twitter:description" content="2.1 Perceptron Hypothesis Set感知器假设空间 依旧以银行核发信用卡为例，讲述Perceptron的$ H $。  For $ x = (x_1, x_2, \cdots, x_d) $ ——‘features of customer’, compute a weighted ‘score’ and  approve credit if $ \sum_{i=1}^d w_">
-<meta name="twitter:image" content="http://ow5t5k2fx.bkt.clouddn.com/2.1.png">
+<meta name="twitter:title" content="机器学习基石1——The Learning Problem">
+<meta name="twitter:description" content="1.1 Course Introduction课程简介 Foundation Oriented 基础型What every machine learning user should know:  philosophical illustrations key theory core techniques usage in practice  介绍了要掌握机器学习需要学好的四个方面：哲学思想、理论工">
+<meta name="twitter:image" content="http://ow5t5k2fx.bkt.clouddn.com/1.1-learning.png">
 
 
 
@@ -141,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/22/机器学习基石2/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/16/机器学习基石1/"/>
 
 
 
 
 
-  <title>机器学习基石2——Learning to Answer Yes or No | YennyQ's Note</title>
+  <title>机器学习基石1——The Learning Problem | YennyQ's Note</title>
   
 
 
@@ -321,7 +322,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/22/机器学习基石2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/16/机器学习基石1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YennyQ">
@@ -338,7 +339,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">机器学习基石2——Learning to Answer Yes or No</h1>
+          <h1 class="post-title" itemprop="name headline">机器学习基石1——The Learning Problem</h1>
         
 
         <div class="post-meta">
@@ -350,8 +351,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-22T20:10:03+08:00">
-                2017-09-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-16T18:34:03+08:00">
+                2017-09-16
               </time>
             
 
@@ -390,7 +391,7 @@
 
           
           
-             <span id="/2017/09/22/机器学习基石2/" class="leancloud_visitors" data-flag-title="机器学习基石2——Learning to Answer Yes or No">
+             <span id="/2017/09/16/机器学习基石1/" class="leancloud_visitors" data-flag-title="机器学习基石1——The Learning Problem">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -421,150 +422,89 @@
       
 
       
-        <h2 id="2-1-Perceptron-Hypothesis-Set"><a href="#2-1-Perceptron-Hypothesis-Set" class="headerlink" title="2.1 Perceptron Hypothesis Set"></a>2.1 Perceptron Hypothesis Set</h2><p>感知器假设空间</p>
-<p>依旧以银行核发信用卡为例，讲述Perceptron的$ H $。</p>
+        <h2 id="1-1-Course-Introduction"><a href="#1-1-Course-Introduction" class="headerlink" title="1.1 Course Introduction"></a>1.1 Course Introduction</h2><p>课程简介</p>
+<h3 id="Foundation-Oriented-基础型"><a href="#Foundation-Oriented-基础型" class="headerlink" title="Foundation Oriented 基础型"></a>Foundation Oriented 基础型</h3><p>What every machine learning user should know:</p>
 <ul>
-<li>For $ x = (x_1, x_2, \cdots, x_d) $ ——‘features of customer’, compute a weighted ‘score’ and <ul>
-<li>approve credit if $ \sum_{i=1}^d w_i x_i &gt; threshold$</li>
-<li>deny credit if $ \sum_{i=1}^d w_i x_i &lt; threshold$</li>
+<li>philosophical illustrations</li>
+<li>key theory</li>
+<li>core techniques</li>
+<li>usage in practice</li>
 </ul>
-</li>
-<li>$ y: {+1(good), -1(bad)} $, 0 ignored —— linear formula $ h \in H$ are $ h(x) = sign((\sum_{i=1}^d w_i x_i) - threshold) $</li>
+<p>介绍了要掌握机器学习需要学好的四个方面：哲学思想、理论工具、算法技巧、实际使用。这门课将更偏重于理论和思想，而非算法。</p>
+<h3 id="课程主要分四大部分"><a href="#课程主要分四大部分" class="headerlink" title="课程主要分四大部分"></a>课程主要分四大部分</h3><ul>
+<li>When can machine learning?(illustative + technical)</li>
+<li>Why can machine learning?(theoretical + illustrative)</li>
+<li>How can machine learning?(technical + practical)</li>
+<li>How can machine learning better?(practical + theoretical)</li>
 </ul>
-<p>如同考试打分，每道题有个特定分数，即权重($w$)，再给定一个及格线，即阈值($threshold$)。</p>
-<p>以下仅为了符号方便进行数学简化：</p>
-<p>$ h(x) = sign((\sum_{i=1}^d w_i x_i) - threshold) $</p>
-<p>$ \ \ \ \ \ \ \ \ = sign((\sum_{i=1}^d w_i x_i) + (-threshold * 1)) $</p>
-<p>$ \ \ \ \ \ \ \ \ = sign((\sum_{i=1}^d w_i x_i) + (w_0 * x_0)) $</p>
-<p>$ \ \ \ \ \ \ \ \ = sign(\sum_{i=0}^d w_i x_i) $</p>
-<p>$ \ \ \ \ \ \ \ \ = sign(\mathbf{w}^T \mathbf{x})$</p>
-<p>如此，不同的$h(x)$对应不同的向量$\mathbf{w}$，也可以说假设空间$H$即向量$\mathbf{w}$的取值范围。</p>
-<p>用直观一点的图像来解释这个感知器假设函数。</p>
-<p>为便于观察，特征数量限制在两个，以将图像限定在二维平面内，此时的$ h $函数：$ h(x) = sign(w_0 + w_1 x_1 + w_2 x_2) $</p>
-<p><img src="http://ow5t5k2fx.bkt.clouddn.com/2.1.png" alt="image"></p>
+<h2 id="1-2-What-is-Machine-Learning"><a href="#1-2-What-is-Machine-Learning" class="headerlink" title="1.2 What is Machine Learning"></a>1.2 What is Machine Learning</h2><p>什么是机器学习？</p>
+<h3 id="From-Learning-to-Machine-Learning"><a href="#From-Learning-to-Machine-Learning" class="headerlink" title="From Learning to Machine Learning"></a>From Learning to Machine Learning</h3><p>学习是人或者动物通过观察和思考转换成有用的技巧的过程。<br><img src="http://ow5t5k2fx.bkt.clouddn.com/1.1-learning.png" alt="学习"></p>
+<p>机器学习，则是计算机通过数据和计算获得有用技巧的过程。<br><img src="http://ow5t5k2fx.bkt.clouddn.com/1.2-machine_learning.png" alt="机器学习"></p>
+<p>skill，技巧又是什么呢？<br>技巧就是improve some performance measure，增进某种东西的表现。<br><img src="http://ow5t5k2fx.bkt.clouddn.com/1.3-skill.png" alt="机器学习"></p>
+<p>例如，通过前十年的股票数据得出能获得更多增益的投资技巧，就算是机器学习。</p>
+<h3 id="Why-use-machine-learning"><a href="#Why-use-machine-learning" class="headerlink" title="Why use machine learning?"></a>Why use machine learning?</h3><p>因为机器学习是一个alternative route to build complicated system</p>
 <ul>
-<li>customer features $ \mathbf{x} $: points on the plane (points in $ R^d $)</li>
-<li>labels $ y $: $ \circ  (+1)$, $ \times (-1)$</li>
-<li>hypothesis $ h $: lines (or hyperplanes in $ R^d $)</li>
+<li>When human cannot program system manually——navigating on Mars</li>
+<li>When human cannot ‘define the solution’ easily——speech/visual recognition</li>
+<li>When needing rapid decisions that human cannot do——high-frequency trading</li>
+<li>When needing to be user-oriented in a massive scale——consumer-targeted marketing</li>
 </ul>
-<p>所以$ h $是在不同的权值$ \mathbf{w} $下对应的不同的直线（或平面/超平面），因为$ sign $是以0为分界线的函数，此时$ w_0 + w_1 x_1 + w_2 x_2 = 0 $，恰好是这条直线，而直线一侧为正，一侧为负。</p>
-<p><strong>perceptrons $\Leftrightarrow $ linear (binary) classifiers</strong></p>
-<h2 id="2-2-Perceptron-Learning-Algorithm-PLA"><a href="#2-2-Perceptron-Learning-Algorithm-PLA" class="headerlink" title="2.2 Perceptron Learning Algorithm (PLA)"></a>2.2 Perceptron Learning Algorithm (PLA)</h2><p>感知器学习算法</p>
-<p>Select $ g $ From $ H $</p>
+<h3 id="Key-Essence-of-Machine-Learning"><a href="#Key-Essence-of-Machine-Learning" class="headerlink" title="Key Essence of Machine Learning"></a>Key Essence of Machine Learning</h3><ul>
+<li>exists some ‘underlying pattern’ to be learned——so ‘performance measure’ can be improved</li>
+<li>but no programmable (easy) definition——so ML is needed</li>
+<li>somehow there is data about the pattern——so ML has some ‘inputs’ to learn from</li>
+</ul>
+<h2 id="1-3-Applications-of-Machine-Learning"><a href="#1-3-Applications-of-Machine-Learning" class="headerlink" title="1.3 Applications of Machine Learning"></a>1.3 Applications of Machine Learning</h2><p>机器学习的应用</p>
+<p>用几个实际的项目介绍了机器学习在人们日常生活中的衣食住行各方面的应用。本小节大概主要是为了激发兴趣和联系实际，并告诉大家机器学习的应用前景广泛。</p>
+<h2 id="1-4-Components-of-Machine-Learning"><a href="#1-4-Components-of-Machine-Learning" class="headerlink" title="1.4 Components of Machine Learning"></a>1.4 Components of Machine Learning</h2><p>机器学习的组成部分</p>
+<p>用银行判断是否要发行信用卡给客户的例子，来讲述机器学习可以分为哪些部分。用形式化符号来定义了要学习的问题。</p>
 <ul>
-<li>want: $ g \approx f $(hard when $ f $ unknown)</li>
-<li>almost necessary: $ g \approx f $ on $ D $, ideally $ g(x_n) = f(x_n) = y_n$</li>
-<li>difficult: $ H $ is of infinite size</li>
-<li>idea: start from some $ g_0 $, and ‘correct’ its mistakes on  $ D $</li>
+<li><strong>input</strong>: $ x \in X $ (customer application, 银行通过用户申请资料获取的信息)</li>
+<li><strong>output</strong>: $ y \in Y $ (good/bad after approving credit card, 是否要发卡给客户)</li>
+<li>unknown pattern to be learned &lt;=&gt; <strong>target function</strong>: $ f: X \rightarrow Y $ (ideal credit approval formula, 理想的银行发卡公式)</li>
+<li><strong>data</strong> &lt;=&gt; training examples: $ D = {(x_1, y_1), (x_2, y_2), … ,(x_n, y_n)} $ (historical records in bank, 银行发卡的历史记录)</li>
+<li><strong>hypothesis</strong> &lt;=&gt; skill with hopefully good performance: $ g: X \rightarrow Y $ (‘learned’ formula to be used, 能学习到的公式)</li>
 </ul>
-<p>确定问题点，分析已知条件，列出解题障碍，得出一个大概可能的解法。然后顺着解法讲述了感知器学习算法。</p>
-<p>Perceptron Learning Algorithm</p>
-<p>Start from some $ \mathbf{w_0} $ (say, $ \mathbf{0} $), for t = 0, 1, …</p>
+<p>这样可以得到一个简单的流程图，如下：<br><img src="http://ow5t5k2fx.bkt.clouddn.com/1.4-simple_flow.png" alt="机器学习简要流程"></p>
+<p>可以看出，机器学习就是我们从一个未知的f中得到大量的数据，然后在这些数据的基础上得到一个未知的g的过程。</p>
+<p>更详细一点的流程图如下所示：<br><img src="http://ow5t5k2fx.bkt.clouddn.com/1.5-detail_flow.png" alt="机器学习简要流程"></p>
 <ul>
-<li>find a mistake of $ \mathbf{w<em>t} $ called $ (x</em>{n(t)}, y_{n(t)}) $, $ sign(\mathbf{w<em>t}^T \mathbf{x</em>{n(t)}}) \neq y_{n(t)}$</li>
-<li>(try to )correct the mistake by $ \mathbf{w_{t+1}} \leftarrow \mathbf{w<em>t} + y</em>{n(t)} \mathbf{x_{n(t)}} $ </li>
+<li>target $f$ unknown</li>
+<li>hypothesis $g$ hopefully $\approx f$ but possibly different from f</li>
+<li>hypothesis set $H$ can contain good or bad hypotheses, up to $A$ to pick the ‘best’ one as $g$</li>
+<li>learning model = $A$ and $H$</li>
+<li><strong>summary: use data to compute hypothesis $g$ that approximates target $f$</strong></li>
 </ul>
-<p>…until no more mistakes<br>return last $ \mathbf{w} $ (called $ \mathbf{w_{PLA}} $) as g</p>
-<p>修正公式$ \mathbf{w_{t+1}} = \mathbf{w<em>t} + y</em>{n(t)} \mathbf{x_{n(t)}} $怎么来的呢？这里需要用到一点线代：</p>
+<h2 id="1-5-Machine-Learning-and-Other-Fields"><a href="#1-5-Machine-Learning-and-Other-Fields" class="headerlink" title="1.5 Machine Learning and Other Fields"></a>1.5 Machine Learning and Other Fields</h2><p>机器学习与其他领域</p>
+<h3 id="Machine-Learning-and-Data-Mining"><a href="#Machine-Learning-and-Data-Mining" class="headerlink" title="Machine Learning and Data Mining"></a>Machine Learning and Data Mining</h3><p>机器学习与数据挖掘</p>
+<p>Data Mining: use (huge) data to <strong>find property that is interesting</strong></p>
+<p>例如超市经营者根据数据来判断某些物品的销售之间是不是有什么关联。</p>
+<p>Difficult to distinguish ML and DM in reality:</p>
 <ul>
-<li>首先，$ sign(\mathbf{w}^T \mathbf{x}) $实际就是向量$ \mathbf{w}  $和向量$ \mathbf{x}  $的内积</li>
-<li>其次，大家知道垂直向量的内积为0，而内积大于0则两向量夹角小于90°，内积小于0则大于90°</li>
-<li>分情况考虑，对于一个数据$ (\mathbf{x_n}, y_n) $， $ sign(\mathbf{w}^T \mathbf{x_n}) \neq y_n$无外乎两种情况：<ul>
-<li>$ -1 \neq +1 $，此时向量$ \mathbf{w} $和$ \mathbf{x_n} $夹角大于90°，而$ y_n  $要求正确的$ \mathbf{w}  $应该是与$ \mathbf{x_n}  $小于90°的，为减小$ \mathbf{w} $和$ \mathbf{x_n} $角度，我们就给$ \mathbf{w} + \mathbf{x_n} $</li>
-<li>$ +1 \neq -1 $，反之同理，为增大角度给$ \mathbf{w} - \mathbf{x_n} $</li>
+<li>if ‘interesting property’ same as ‘hypothesis that approximates target’——ML = DM</li>
+<li>if ‘interesting property’ related to ‘hypothesis that approximates target’——DM can help ML, and vice versa(often, not always)</li>
+<li>traditional DM also focused on efficient computation in large database</li>
 </ul>
-</li>
-</ul>
-<p>如下图示</p>
-<p><img src="http://ow5t5k2fx.bkt.clouddn.com/2.2.png" alt="image"></p>
-<p>这里有一点需要说明，$ \mathbf{w_{t+1}} = \mathbf{w<em>t} + y</em>{n(t)} \mathbf{x_{n(t)}} $ 虽然不能保证就立马能将角度修正为当前$ y_n $需要的角度，但确是一点一点增大/减小的，而随着循环次数的增加，总归是可以到达$ y_n $需要的角度的。</p>
-<p>Some Remaining Issues of PLA</p>
+<h3 id="Machine-Learning-and-Artificial-Intelligence"><a href="#Machine-Learning-and-Artificial-Intelligence" class="headerlink" title="Machine Learning and Artificial Intelligence"></a>Machine Learning and Artificial Intelligence</h3><p>机器学习与人工智能</p>
+<p>Artificial Intelligence: compute something that <strong>shows intelligent behavior</strong></p>
+<p>例如让计算机自动下棋。</p>
+<p>ML is one possible route to realize AI:</p>
 <ul>
-<li>Algorithmic: halt (with no mistake)?<ul>
-<li>naïve cyclic: ??</li>
-<li>random cyclic: ??</li>
-<li>other variant: ??</li>
-</ul>
-</li>
-<li>Learning: $ g \approx f $?<ul>
-<li>on $ D $, if halt, yes (no mistake)</li>
-<li>outside $ D $: ??</li>
-<li>if not halting: ??</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-3-Guarantee-of-PLA"><a href="#2-3-Guarantee-of-PLA" class="headerlink" title="2.3 Guarantee of PLA"></a>2.3 Guarantee of PLA</h2><p>PLA算法的可行性保障</p>
-<h3 id="Linear-Separability"><a href="#Linear-Separability" class="headerlink" title="Linear Separability"></a>Linear Separability</h3><p>首先训练样本$ D $要线性可分</p>
-<p><img src="http://ow5t5k2fx.bkt.clouddn.com/2.3.png" alt="image"></p>
-<h3 id="assume-linear-separable-D-does-PLA-always-halt"><a href="#assume-linear-separable-D-does-PLA-always-halt" class="headerlink" title="assume linear separable $ D $, does PLA always halt?"></a>assume linear separable $ D $, does PLA always halt?</h3><p>证明思路是根据已知条件来求解$ \mathbf{w_t} $和$ \mathbf{w_f} $归一化后的向量内积，越大则两向量越邻近</p>
-<ul>
-<li><p>PLA Fact: $ \mathbf{w_t} $ Gets More Aligned with $ \mathbf{w_f} $</p>
-<p>  linear separable $ D $ $ \Leftrightarrow $ exists perfect $ \mathbf{w_f} $ such that $ y_n = sign( \mathbf{w_f^T} \mathbf{x_n} ) $</p>
-<ul>
-<li><p>$ \mathbf{w_f} $ perfect hence every $ \mathbf{x_n} $ correctly away from line: </p>
-<p>  $ y_{n(t)} \mathbf{w<em>f^T} \mathbf{x</em>{n(t)}} \ge \min_n y_n \mathbf{w_f^T} \mathbf{x_n} &gt; 0 $</p>
-</li>
-<li><p>$ \mathbf{w<em>f^T} \mathbf{w</em>{t+1}} \uparrow $ by updating with any $ (\mathbf{x<em>{n(t)}}, (\mathbf{y</em>{n(t)}}) $ </p>
-<p>  $ \mathbf{w<em>f^T} \mathbf{w</em>{t+1}} = \mathbf{w_f^T}(\mathbf{w<em>t} + y</em>{n(t)} \mathbf{x_{n(t)}}) $</p>
-<p>  $ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ge \mathbf{w_f^T}\mathbf{w_t} + \min_n y_n \mathbf{w_f^T} \mathbf{x_n} $</p>
-<p>  $ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ &gt; \mathbf{w_f^T}\mathbf{w_t} + 0 $</p>
-<p>$ \mathbf{w_t} $ appears more aligned with $ \mathbf{w_f} $ after update ?? NO, 还需排除长度的因素</p>
-</li>
-</ul>
-</li>
-<li><p>PLA Fact: $ \mathbf{w_t} $ Does Not Grow Too Fast</p>
-<p>  $ \mathbf{w_t} $ changed only when mistake $ \Leftrightarrow $ $ sign( \mathbf{w<em>t^T} \mathbf{x</em>{n(t)}} ) \neq y<em>{n(t)} $ $ \Leftrightarrow $ $ y</em>{n(t)} \mathbf{w<em>t^T} \mathbf{x</em>{n(t)}} \le 0$</p>
-<ul>
-<li><p>mistake ‘limits’ $ ||\mathbf{w_t}||^2 $ growth, even when updating with ‘longest’ $ \mathbf{x_n} $</p>
-<p>  $ ||\mathbf{w_{t+1}}||^2 = ||\mathbf{w<em>t} + y</em>{n(t)} \mathbf{x_{n(t)}} ||^2$</p>
-<p>  $ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ = ||\mathbf{w<em>t}||^2 + 2y</em>{n(t)} \mathbf{w<em>t^T} \mathbf{x</em>{n(t)}} + ||y<em>{n(t)} \mathbf{x</em>{n(t)}} ||^2$</p>
-<p>  $ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \le ||\mathbf{w<em>t}||^2 + 0 + ||y</em>{n(t)} \mathbf{x_{n(t)}} ||^2$</p>
-<p>  $ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \le ||\mathbf{w_t}||^2 + \max_n||y_n \mathbf{x_n} ||^2$</p>
-<p>  $ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ = ||\mathbf{w_t}||^2 + \max_n|| \mathbf{x_n} ||^2$</p>
-<p>start from $ \mathbf{w_0} = 0 $, after $ T $ mistake corrections,<br>  $ \frac {\mathbf{w_f^T}} {||\mathbf{w_f}||} \frac {\mathbf{w_T}} {||\mathbf{w_T}||} \ge \sqrt{T} \cdot C $</p>
-</li>
+<li>$g \approx f$ is something that shows intelligent behavior——ML can realize AI, among other routes</li>
+<li>e.g. chess playing<ul>
+<li>traditional AI: game tree</li>
+<li>ML for AI: ‘learning from data’</li>
 </ul>
 </li>
 </ul>
-<h3 id="以下简单计算常数-C-以及-T-的上界"><a href="#以下简单计算常数-C-以及-T-的上界" class="headerlink" title="以下简单计算常数 $ C $以及 $ T $的上界"></a>以下简单计算常数 $ C $以及 $ T $的上界</h3><p>$ \mathbf{w_f^T} \mathbf{w_T} = \mathbf{w<em>f^T} (\mathbf{w</em>{T-1}} + y_n \mathbf{x_n})$</p>
-<p>$ \ \ \ \ \ \ \ \ \ \ \ \ = \mathbf{w<em>f^T} \mathbf{w</em>{T-1}} + y_n \mathbf{w_f^T} \mathbf{x_n} $</p>
-<p>$ \ \ \ \ \ \ \ \ \ \ \ \ \ge \mathbf{w<em>f^T} \mathbf{w</em>{T-1}} + \min_n y_n \mathbf{w_f^T} \mathbf{x_n} $</p>
-<p>$ \ \ \ \ \ \ \ \ \ \ \ \ = \mathbf{w_f^T} \mathbf{w_0} + T\min_n y_n \mathbf{w_f^T} \mathbf{x_n} $</p>
-<p>$ \ \ \ \ \ \ \ \ \ \ \ \ = T\min_n y_n \mathbf{w_f^T} \mathbf{x_n} $</p>
-<p>$ ||\mathbf{w<em>T}||^2 = ||\mathbf{w</em>{T-1}} + y<em>{n(T-1)} \mathbf{x</em>{n(T-1)}} ||^2$</p>
-<p>$ \ \ \ \ \ \ \ \ \ \ \ \ = ||\mathbf{w<em>{T-1}}||^2 + 2y</em>{n(T-1)} \mathbf{w<em>{T-1}^T} \mathbf{x</em>{n(T-1)}} + ||y<em>{n(T-1)} \mathbf{x</em>{n(T-1)}} ||^2$</p>
-<p>$ \ \ \ \ \ \ \ \ \ \ \ \ \le ||\mathbf{w<em>{T-1}}||^2 +||y</em>{n(T-1)} \mathbf{x_{n(T-1)}} ||^2$</p>
-<p>$ \ \ \ \ \ \ \ \ \ \ \ \ \le ||\mathbf{w_{T-1}}||^2 + \max_n||y_n \mathbf{x_n} ||^2$</p>
-<p>$ \ \ \ \ \ \ \ \ \ \ \ \ = ||\mathbf{w_{T-1}}||^2 + \max_n|| \mathbf{x_n} ||^2$</p>
-<p>$ \ \ \ \ \ \ \ \ \ \ \ \ = ||\mathbf{w_0}||^2 + T \max_n|| \mathbf{x_n} ||^2$</p>
-<p>$ \ \ \ \ \ \ \ \ \ \ \ \ = T \max_n|| \mathbf{x_n} ||^2$</p>
-<p>$ \frac {\mathbf{w_f^T}} {||\mathbf{w_f}||} \frac {\mathbf{w_T}} {||\mathbf{w_T}||} \ge \frac {T\min_n y_n \mathbf{w_f^T} \mathbf{x_n}} {||\mathbf{w_f}|| \sqrt{T \max_n|| \mathbf{x_n} ||^2}}$</p>
-<p>$ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ = \frac {T\min_n y_n \mathbf{w_f^T} \mathbf{x_n}} {||\mathbf{w_f}|| \sqrt{T \max_n|| \mathbf{x_n} ||^2}}$</p>
-<p>$ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ = \sqrt {T}\frac {\min_n y_n \frac {\mathbf{w_f^T}} {||\mathbf{w_f}||} \mathbf{x_n}} { \sqrt{\max_n|| \mathbf{x_n} ||^2}}$</p>
-<p>$ 1 \ge \frac {\mathbf{w_f^T}} {||\mathbf{w_f}||} \frac {\mathbf{w_T}} {||\mathbf{w_T}||} $ $ \Longrightarrow $ $ T \le \frac {\max_n|| \mathbf{x_n}||^2} {({\min_n y_n \frac {\mathbf{w_f^T}} {||\mathbf{w_f}||} \mathbf{x_n}})^2} $</p>
-<p>可知，$ \mathbf{w_t} $是不断缓慢接近$ \mathbf{w_f} $的，并且T是有上限的，也即在数据样本线性可分的情况下，PLA最终是会在有限的次数内找到一个接近$ f $的$ g $并停下来的。</p>
-<h2 id="2-4-None-Separable-Data"><a href="#2-4-None-Separable-Data" class="headerlink" title="2.4 None Separable Data"></a>2.4 None Separable Data</h2><p>线性不可分的数据</p>
-<p>PLA的缺陷：</p>
+<h3 id="Machine-Learning-and-Statistics"><a href="#Machine-Learning-and-Statistics" class="headerlink" title="Machine Learning and Statistics"></a>Machine Learning and Statistics</h3><p>机器学习与统计</p>
+<p>Statistics: use data to <strong>make inference</strong> about an unknown process</p>
+<p>例如丢硬币的正面几率。</p>
+<p>statistics has many useful tools for ML:</p>
 <ul>
-<li>‘assumes’ linear separable $ D $ to halt —— property unknown in advance</li>
-<li>not fully sure how long halting takes ($ T $ depends on $ \mathbf{w_f} $) —— though practically fast</li>
+<li>$g$ is an inference outcome; $f$ is something unknown——statistics can be used to achieve ML</li>
+<li>traditional statistics also focus on provable results with math assumptions, and care less about computation</li>
 </ul>
-<p>样本中通常会混入noise，如录入错误、判断错误等，这种情况下原本线性可分的数据都会变成线性不可分，如下图。</p>
-<p><img src="http://ow5t5k2fx.bkt.clouddn.com/2.5.png" alt="image"></p>
-<ul>
-<li>assume ‘little’ noise: $ y_n = f(x_n) $ usually</li>
-<li>if so, $ g \approx f $ on $ D $ $ \Leftrightarrow $ $ y_n = g(x_n) $ usually</li>
-<li>try, $ \mathbf{w_g} \leftarrow \arg\min<em>w \sum</em>{n=1}^N[y_n \neq sign(\mathbf{w^T \mathbf{x_n}})]$  —— <strong>NP-hard to solve</strong></li>
-</ul>
-<p>近似的求解算法 —— Pocket Algorithm</p>
-<p>modify PLA algorithm by keeping best weights in pocket</p>
-<p>initialize pocket weights $ \mathbf{\hat w}$, for t = 0, 1, …</p>
-<ul>
-<li>find a (random) mistake of $ \mathbf{w<em>t} $ called $ (x</em>{n(t)}, y_{n(t)}) $</li>
-<li>(try to )correct the mistake by $ \mathbf{w_{t+1}} \leftarrow \mathbf{w<em>t} + y</em>{n(t)} \mathbf{x_{n(t)}} $ </li>
-<li>if $ \mathbf{w<em>{t+1}} $ makes fewer mistakes than $ \mathbf{\hat w}$, replace $ \mathbf{\hat w}$ by $ \mathbf{w</em>{t+1}} $</li>
-</ul>
-<p>…until enough iterations<br>return$ \mathbf{\hat w}$ (called $ \mathbf{w_{POCKET}} $) as g</p>
 
       
     </div>
@@ -582,13 +522,13 @@
       
         <div class="post-tags">
           
+            <a href="/tags/概念/" rel="tag"># 概念</a>
+          
             <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
           
             <a href="/tags/笔记/" rel="tag"># 笔记</a>
           
-            <a href="/tags/PLA/" rel="tag"># PLA</a>
-          
-            <a href="/tags/Pocket/" rel="tag"># Pocket</a>
+            <a href="/tags/课程简介/" rel="tag"># 课程简介</a>
           
         </div>
       
@@ -601,8 +541,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/22/机器学习基石1/" rel="next" title="机器学习基石1——The Learning Problem">
-                <i class="fa fa-chevron-left"></i> 机器学习基石1——The Learning Problem
+              <a href="/2017/09/14/NP问题简述/" rel="next" title="NP问题简述">
+                <i class="fa fa-chevron-left"></i> NP问题简述
               </a>
             
           </div>
@@ -611,8 +551,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/22/机器学习基石3/" rel="prev" title="机器学习基石3——Types of Learning">
-                机器学习基石3——Types of Learning <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/18/机器学习基石2/" rel="prev" title="机器学习基石2——Learning to Answer Yes or No">
+                机器学习基石2——Learning to Answer Yes or No <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -717,7 +657,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -752,7 +692,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Perceptron-Hypothesis-Set"><span class="nav-number">1.</span> <span class="nav-text">2.1 Perceptron Hypothesis Set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Perceptron-Learning-Algorithm-PLA"><span class="nav-number">2.</span> <span class="nav-text">2.2 Perceptron Learning Algorithm (PLA)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Guarantee-of-PLA"><span class="nav-number">3.</span> <span class="nav-text">2.3 Guarantee of PLA</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linear-Separability"><span class="nav-number">3.1.</span> <span class="nav-text">Linear Separability</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#assume-linear-separable-D-does-PLA-always-halt"><span class="nav-number">3.2.</span> <span class="nav-text">assume linear separable $ D $, does PLA always halt?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以下简单计算常数-C-以及-T-的上界"><span class="nav-number">3.3.</span> <span class="nav-text">以下简单计算常数 $ C $以及 $ T $的上界</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-None-Separable-Data"><span class="nav-number">4.</span> <span class="nav-text">2.4 None Separable Data</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Course-Introduction"><span class="nav-number">1.</span> <span class="nav-text">1.1 Course Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Foundation-Oriented-基础型"><span class="nav-number">1.1.</span> <span class="nav-text">Foundation Oriented 基础型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#课程主要分四大部分"><span class="nav-number">1.2.</span> <span class="nav-text">课程主要分四大部分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-What-is-Machine-Learning"><span class="nav-number">2.</span> <span class="nav-text">1.2 What is Machine Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#From-Learning-to-Machine-Learning"><span class="nav-number">2.1.</span> <span class="nav-text">From Learning to Machine Learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Why-use-machine-learning"><span class="nav-number">2.2.</span> <span class="nav-text">Why use machine learning?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Key-Essence-of-Machine-Learning"><span class="nav-number">2.3.</span> <span class="nav-text">Key Essence of Machine Learning</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Applications-of-Machine-Learning"><span class="nav-number">3.</span> <span class="nav-text">1.3 Applications of Machine Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Components-of-Machine-Learning"><span class="nav-number">4.</span> <span class="nav-text">1.4 Components of Machine Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-Machine-Learning-and-Other-Fields"><span class="nav-number">5.</span> <span class="nav-text">1.5 Machine Learning and Other Fields</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Machine-Learning-and-Data-Mining"><span class="nav-number">5.1.</span> <span class="nav-text">Machine Learning and Data Mining</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Machine-Learning-and-Artificial-Intelligence"><span class="nav-number">5.2.</span> <span class="nav-text">Machine Learning and Artificial Intelligence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Machine-Learning-and-Statistics"><span class="nav-number">5.3.</span> <span class="nav-text">Machine Learning and Statistics</span></a></li></ol></li></ol></div>
             
 
           </div>
