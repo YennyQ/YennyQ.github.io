@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[机器学习基石3——Types of Learning]]></title>
+      <url>/2017/09/22/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B33/</url>
+      <content type="html"><![CDATA[<h2 id="3-1-Learning-with-Different-Output-Space-Y"><a href="#3-1-Learning-with-Different-Output-Space-Y" class="headerlink" title="3.1 Learning with Different Output Space $ Y $"></a>3.1 Learning with Different Output Space $ Y $</h2><p>不同的输出空间</p>
+<h3 id="Binary-Classification"><a href="#Binary-Classification" class="headerlink" title="Binary Classification"></a>Binary Classification</h3><p>二元分类</p>
+<p>$ Y = {-1, +1} $</p>
+<ul>
+<li>credit approve/disapprove</li>
+<li>email spam/non-spam</li>
+<li>patient sick/not sick</li>
+</ul>
+<h3 id="Multiclass-Classification"><a href="#Multiclass-Classification" class="headerlink" title="Multiclass Classification"></a>Multiclass Classification</h3><p>多元分类</p>
+<p>$ Y = {1, 2, …, K} $</p>
+<ul>
+<li>written digits $ \Rightarrow $ 0, 1, …, 9</li>
+<li>pictures $ \Rightarrow $ apple, orange, strawberry</li>
+<li>emails $ \Rightarrow $ spam, primary, social, promotion</li>
+</ul>
+<h3 id="Regression"><a href="#Regression" class="headerlink" title="Regression"></a>Regression</h3><p>回归</p>
+<p>$ Y = R $</p>
+<ul>
+<li>company data $ \Rightarrow $ stock price</li>
+<li>climate data $ \Rightarrow $ temperature</li>
+</ul>
+<h3 id="Structured-Learning"><a href="#Structured-Learning" class="headerlink" title="Structured Learning"></a>Structured Learning</h3><p>结构化学习</p>
+<p>$ Y = structures $ </p>
+<ul>
+<li>protein data $ \Rightarrow $ protein folding</li>
+<li>speech data $ \Rightarrow $ speech parse tree</li>
+</ul>
+<h2 id="3-2-Learning-with-Different-Data-Label-y-n"><a href="#3-2-Learning-with-Different-Data-Label-y-n" class="headerlink" title="3.2 Learning with Different Data Label $ y_n $"></a>3.2 Learning with Different Data Label $ y_n $</h2><p>不同的数据标记</p>
+<h3 id="Supervised-Learning-Recognition-with-y-n"><a href="#Supervised-Learning-Recognition-with-y-n" class="headerlink" title="Supervised Learning: Recognition with $ y_n $"></a>Supervised Learning: Recognition with $ y_n $</h3><p>监督式学习</p>
+<p><img src="http://ow5t5k2fx.bkt.clouddn.com/3.1-.png" alt="image"></p>
+<h3 id="Unsupervised-Learning-Learning-without-with-y-n"><a href="#Unsupervised-Learning-Learning-without-with-y-n" class="headerlink" title="Unsupervised Learning: Learning without with $ y_n $"></a>Unsupervised Learning: Learning without with $ y_n $</h3><p>非监督式学习</p>
+<p><img src="http://ow5t5k2fx.bkt.clouddn.com/3.2-.png" alt="image"></p>
+<ul>
+<li>articles $ \Rightarrow $ topics</li>
+<li>consumer profiles $ \Rightarrow $ consumer groups</li>
+</ul>
+<p>常见使用场景：</p>
+<ul>
+<li>clustering 分群/聚类，最常见</li>
+<li>density estimation 密度评估</li>
+<li>outlier detection 离群点检测</li>
+</ul>
+<h3 id="Semi-supervised-Learning-Recognition-with-some-y-n"><a href="#Semi-supervised-Learning-Recognition-with-some-y-n" class="headerlink" title="Semi-supervised Learning: Recognition with some $ y_n $"></a>Semi-supervised Learning: Recognition with some $ y_n $</h3><p>半监督式学习</p>
+<p><img src="http://ow5t5k2fx.bkt.clouddn.com/3.3-.png" alt="image"></p>
+<ul>
+<li>face images with a few labeled $ \Rightarrow $ face identifier</li>
+<li>medicine data with a few labeled $ \Rightarrow $ medicine effect predictor</li>
+</ul>
+<h3 id="Reinforcement-Learning-Implicit-y-n-by-goodness-hat-y-n"><a href="#Reinforcement-Learning-Implicit-y-n-by-goodness-hat-y-n" class="headerlink" title="Reinforcement Learning: Implicit $ y_n $ by goodness($ \hat y_n $)"></a>Reinforcement Learning: Implicit $ y_n $ by goodness($ \hat y_n $)</h3><p>强化学习</p>
+<ul>
+<li>(customer, ad choice, ad click earning) $ \Rightarrow $ ad system</li>
+<li>(cards, strategy, winning amount) $ \Rightarrow $ black jack agent</li>
+</ul>
+<h2 id="3-3-Learning-with-Different-Protocol-f-rightarrow-mathbf-x-n-y-n"><a href="#3-3-Learning-with-Different-Protocol-f-rightarrow-mathbf-x-n-y-n" class="headerlink" title="3.3 Learning with Different Protocol $ f \rightarrow (\mathbf{x_n}, y_n) $"></a>3.3 Learning with Different Protocol $ f \rightarrow (\mathbf{x_n}, y_n) $</h2><p>不同的获取数据方式</p>
+<h3 id="Batch-Learning-all-known-data"><a href="#Batch-Learning-all-known-data" class="headerlink" title="Batch Learning: all known data"></a>Batch Learning: all known data</h3><p>批量学习</p>
+<p>将很多数据一次性给算法 </p>
+<p>a very common protocol</p>
+<h3 id="Online-Learning-sequential-passive-data"><a href="#Online-Learning-sequential-passive-data" class="headerlink" title="Online Learning: sequential (passive) data"></a>Online Learning: sequential (passive) data</h3><p>在线学习</p>
+<p>一笔一笔地把数据喂给算法，如PLA和强化学习</p>
+<p>hypothesis ‘improves’ through receiving data instances sequentially</p>
+<h3 id="Active-Learning-strategically-observed-data"><a href="#Active-Learning-strategically-observed-data" class="headerlink" title="Active Learning: strategically-observed data"></a>Active Learning: strategically-observed data</h3><p>主动学习</p>
+<p>主动提出问题让算法解决</p>
+<p>improve hypothesis with fewer labels (hopefully) by asking questions strategically</p>
+<h2 id="3-4-Learning-with-Different-Input-Space-X"><a href="#3-4-Learning-with-Different-Input-Space-X" class="headerlink" title="3.4 Learning with Different Input Space $ X $"></a>3.4 Learning with Different Input Space $ X $</h2><p>不同的输入（特征）空间</p>
+<h3 id="Concrete-Features"><a href="#Concrete-Features" class="headerlink" title="Concrete Features"></a>Concrete Features</h3><p>具体特征</p>
+<p>concrete features: each dimension of $ X \in R^d $ represents ‘sophisticated physical meaning’</p>
+<p>便于机器学习，经过人类分析提取出的特征，有实用性</p>
+<p><img src="http://ow5t5k2fx.bkt.clouddn.com/3.5.png" alt="image"></p>
+<h3 id="Raw-Features"><a href="#Raw-Features" class="headerlink" title="Raw Features"></a>Raw Features</h3><p>原始特征</p>
+<p>raw features: often need human or machines to convert to concrete ones, simple physical meaning</p>
+<p>很常见，但需要人类或机器转换为具体特征才能用</p>
+<p><img src="http://ow5t5k2fx.bkt.clouddn.com/3.6.png" alt="image"></p>
+<h3 id="Abstract-Features"><a href="#Abstract-Features" class="headerlink" title="Abstract Features"></a>Abstract Features</h3><p>抽象特征</p>
+<p>abstract features: again need ‘feature conversion/extraction/construction’, no physical meaning</p>
+<p>看似毫无意义的数据如ID，更需要抽取特征，困难度更高</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 机器学习基石 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 机器学习 </tag>
+            
+            <tag> 笔记 </tag>
+            
+            <tag> 概念 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[机器学习基石2——Learning to Answer Yes or No]]></title>
+      <url>/2017/09/22/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B32/</url>
+      <content type="html"><![CDATA[<h2 id="2-1-Perceptron-Hypothesis-Set"><a href="#2-1-Perceptron-Hypothesis-Set" class="headerlink" title="2.1 Perceptron Hypothesis Set"></a>2.1 Perceptron Hypothesis Set</h2><p>感知器假设空间</p>
+<p>依旧以银行核发信用卡为例，讲述Perceptron的$ H $。</p>
+<ul>
+<li>For $ x = (x_1, x_2, \cdots, x_d) $ ——‘features of customer’, compute a weighted ‘score’ and <ul>
+<li>approve credit if $ \sum_{i=1}^d w_i x_i &gt; threshold$</li>
+<li>deny credit if $ \sum_{i=1}^d w_i x_i &lt; threshold$</li>
+</ul>
+</li>
+<li>$ y: {+1(good), -1(bad)} $, 0 ignored —— linear formula $ h \in H$ are $ h(x) = sign((\sum_{i=1}^d w_i x_i) - threshold) $</li>
+</ul>
+<p>如同考试打分，每道题有个特定分数，即权重($w$)，再给定一个及格线，即阈值($threshold$)。</p>
+<p>以下仅为了符号方便进行数学简化：</p>
+<p>$ h(x) = sign((\sum_{i=1}^d w_i x_i) - threshold) $</p>
+<p>$ \ \ \ \ \ \ \ \ = sign((\sum_{i=1}^d w_i x_i) + (-threshold * 1)) $</p>
+<p>$ \ \ \ \ \ \ \ \ = sign((\sum_{i=1}^d w_i x_i) + (w_0 * x_0)) $</p>
+<p>$ \ \ \ \ \ \ \ \ = sign(\sum_{i=0}^d w_i x_i) $</p>
+<p>$ \ \ \ \ \ \ \ \ = sign(\mathbf{w}^T \mathbf{x})$</p>
+<p>如此，不同的$h(x)$对应不同的向量$\mathbf{w}$，也可以说假设空间$H$即向量$\mathbf{w}$的取值范围。</p>
+<p>用直观一点的图像来解释这个感知器假设函数。</p>
+<p>为便于观察，特征数量限制在两个，以将图像限定在二维平面内，此时的$ h $函数：$ h(x) = sign(w_0 + w_1 x_1 + w_2 x_2) $</p>
+<p><img src="http://ow5t5k2fx.bkt.clouddn.com/2.1.png" alt="image"></p>
+<ul>
+<li>customer features $ \mathbf{x} $: points on the plane (points in $ R^d $)</li>
+<li>labels $ y $: $ \circ  (+1)$, $ \times (-1)$</li>
+<li>hypothesis $ h $: lines (or hyperplanes in $ R^d $)</li>
+</ul>
+<p>所以$ h $是在不同的权值$ \mathbf{w} $下对应的不同的直线（或平面/超平面），因为$ sign $是以0为分界线的函数，此时$ w_0 + w_1 x_1 + w_2 x_2 = 0 $，恰好是这条直线，而直线一侧为正，一侧为负。</p>
+<p><strong>perceptrons $\Leftrightarrow $ linear (binary) classifiers</strong></p>
+<h2 id="2-2-Perceptron-Learning-Algorithm-PLA"><a href="#2-2-Perceptron-Learning-Algorithm-PLA" class="headerlink" title="2.2 Perceptron Learning Algorithm (PLA)"></a>2.2 Perceptron Learning Algorithm (PLA)</h2><p>感知器学习算法</p>
+<p>Select $ g $ From $ H $</p>
+<ul>
+<li>want: $ g \approx f $(hard when $ f $ unknown)</li>
+<li>almost necessary: $ g \approx f $ on $ D $, ideally $ g(x_n) = f(x_n) = y_n$</li>
+<li>difficult: $ H $ is of infinite size</li>
+<li>idea: start from some $ g_0 $, and ‘correct’ its mistakes on  $ D $</li>
+</ul>
+<p>确定问题点，分析已知条件，列出解题障碍，得出一个大概可能的解法。然后顺着解法讲述了感知器学习算法。</p>
+<p>Perceptron Learning Algorithm</p>
+<p>Start from some $ \mathbf{w_0} $ (say, $ \mathbf{0} $), for t = 0, 1, …</p>
+<ul>
+<li>find a mistake of $ \mathbf{w<em>t} $ called $ (x</em>{n(t)}, y_{n(t)}) $, $ sign(\mathbf{w<em>t}^T \mathbf{x</em>{n(t)}}) \neq y_{n(t)}$</li>
+<li>(try to )correct the mistake by $ \mathbf{w_{t+1}} \leftarrow \mathbf{w<em>t} + y</em>{n(t)} \mathbf{x_{n(t)}} $ </li>
+</ul>
+<p>…until no more mistakes<br>return last $ \mathbf{w} $ (called $ \mathbf{w_{PLA}} $) as g</p>
+<p>修正公式$ \mathbf{w_{t+1}} = \mathbf{w<em>t} + y</em>{n(t)} \mathbf{x_{n(t)}} $怎么来的呢？这里需要用到一点线代：</p>
+<ul>
+<li>首先，$ sign(\mathbf{w}^T \mathbf{x}) $实际就是向量$ \mathbf{w}  $和向量$ \mathbf{x}  $的内积</li>
+<li>其次，大家知道垂直向量的内积为0，而内积大于0则两向量夹角小于90°，内积小于0则大于90°</li>
+<li>分情况考虑，对于一个数据$ (\mathbf{x_n}, y_n) $， $ sign(\mathbf{w}^T \mathbf{x_n}) \neq y_n$无外乎两种情况：<ul>
+<li>$ -1 \neq +1 $，此时向量$ \mathbf{w} $和$ \mathbf{x_n} $夹角大于90°，而$ y_n  $要求正确的$ \mathbf{w}  $应该是与$ \mathbf{x_n}  $小于90°的，为减小$ \mathbf{w} $和$ \mathbf{x_n} $角度，我们就给$ \mathbf{w} + \mathbf{x_n} $</li>
+<li>$ +1 \neq -1 $，反之同理，为增大角度给$ \mathbf{w} - \mathbf{x_n} $</li>
+</ul>
+</li>
+</ul>
+<p>如下图示</p>
+<p><img src="http://ow5t5k2fx.bkt.clouddn.com/2.2.png" alt="image"></p>
+<p>这里有一点需要说明，$ \mathbf{w_{t+1}} = \mathbf{w<em>t} + y</em>{n(t)} \mathbf{x_{n(t)}} $ 虽然不能保证就立马能将角度修正为当前$ y_n $需要的角度，但确是一点一点增大/减小的，而随着循环次数的增加，总归是可以到达$ y_n $需要的角度的。</p>
+<p>Some Remaining Issues of PLA</p>
+<ul>
+<li>Algorithmic: halt (with no mistake)?<ul>
+<li>naïve cyclic: ??</li>
+<li>random cyclic: ??</li>
+<li>other variant: ??</li>
+</ul>
+</li>
+<li>Learning: $ g \approx f $?<ul>
+<li>on $ D $, if halt, yes (no mistake)</li>
+<li>outside $ D $: ??</li>
+<li>if not halting: ??</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-3-Guarantee-of-PLA"><a href="#2-3-Guarantee-of-PLA" class="headerlink" title="2.3 Guarantee of PLA"></a>2.3 Guarantee of PLA</h2><p>PLA算法的可行性保障</p>
+<h3 id="Linear-Separability"><a href="#Linear-Separability" class="headerlink" title="Linear Separability"></a>Linear Separability</h3><p>首先训练样本$ D $要线性可分</p>
+<p><img src="http://ow5t5k2fx.bkt.clouddn.com/2.3.png" alt="image"></p>
+<h3 id="assume-linear-separable-D-does-PLA-always-halt"><a href="#assume-linear-separable-D-does-PLA-always-halt" class="headerlink" title="assume linear separable $ D $, does PLA always halt?"></a>assume linear separable $ D $, does PLA always halt?</h3><p>证明思路是根据已知条件来求解$ \mathbf{w_t} $和$ \mathbf{w_f} $归一化后的向量内积，越大则两向量越邻近</p>
+<ul>
+<li><p>PLA Fact: $ \mathbf{w_t} $ Gets More Aligned with $ \mathbf{w_f} $</p>
+<p>  linear separable $ D $ $ \Leftrightarrow $ exists perfect $ \mathbf{w_f} $ such that $ y_n = sign( \mathbf{w_f^T} \mathbf{x_n} ) $</p>
+<ul>
+<li><p>$ \mathbf{w_f} $ perfect hence every $ \mathbf{x_n} $ correctly away from line: </p>
+<p>  $ y_{n(t)} \mathbf{w<em>f^T} \mathbf{x</em>{n(t)}} \ge \min_n y_n \mathbf{w_f^T} \mathbf{x_n} &gt; 0 $</p>
+</li>
+<li><p>$ \mathbf{w<em>f^T} \mathbf{w</em>{t+1}} \uparrow $ by updating with any $ (\mathbf{x<em>{n(t)}}, (\mathbf{y</em>{n(t)}}) $ </p>
+<p>  $ \mathbf{w<em>f^T} \mathbf{w</em>{t+1}} = \mathbf{w_f^T}(\mathbf{w<em>t} + y</em>{n(t)} \mathbf{x_{n(t)}}) $</p>
+<p>  $ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ge \mathbf{w_f^T}\mathbf{w_t} + \min_n y_n \mathbf{w_f^T} \mathbf{x_n} $</p>
+<p>  $ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ &gt; \mathbf{w_f^T}\mathbf{w_t} + 0 $</p>
+<p>$ \mathbf{w_t} $ appears more aligned with $ \mathbf{w_f} $ after update ?? NO, 还需排除长度的因素</p>
+</li>
+</ul>
+</li>
+<li><p>PLA Fact: $ \mathbf{w_t} $ Does Not Grow Too Fast</p>
+<p>  $ \mathbf{w_t} $ changed only when mistake $ \Leftrightarrow $ $ sign( \mathbf{w<em>t^T} \mathbf{x</em>{n(t)}} ) \neq y<em>{n(t)} $ $ \Leftrightarrow $ $ y</em>{n(t)} \mathbf{w<em>t^T} \mathbf{x</em>{n(t)}} \le 0$</p>
+<ul>
+<li><p>mistake ‘limits’ $ ||\mathbf{w_t}||^2 $ growth, even when updating with ‘longest’ $ \mathbf{x_n} $</p>
+<p>  $ ||\mathbf{w_{t+1}}||^2 = ||\mathbf{w<em>t} + y</em>{n(t)} \mathbf{x_{n(t)}} ||^2$</p>
+<p>  $ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ = ||\mathbf{w<em>t}||^2 + 2y</em>{n(t)} \mathbf{w<em>t^T} \mathbf{x</em>{n(t)}} + ||y<em>{n(t)} \mathbf{x</em>{n(t)}} ||^2$</p>
+<p>  $ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \le ||\mathbf{w<em>t}||^2 + 0 + ||y</em>{n(t)} \mathbf{x_{n(t)}} ||^2$</p>
+<p>  $ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \le ||\mathbf{w_t}||^2 + \max_n||y_n \mathbf{x_n} ||^2$</p>
+<p>  $ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ = ||\mathbf{w_t}||^2 + \max_n|| \mathbf{x_n} ||^2$</p>
+<p>start from $ \mathbf{w_0} = 0 $, after $ T $ mistake corrections,<br>  $ \frac {\mathbf{w_f^T}} {||\mathbf{w_f}||} \frac {\mathbf{w_T}} {||\mathbf{w_T}||} \ge \sqrt{T} \cdot C $</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="以下简单计算常数-C-以及-T-的上界"><a href="#以下简单计算常数-C-以及-T-的上界" class="headerlink" title="以下简单计算常数 $ C $以及 $ T $的上界"></a>以下简单计算常数 $ C $以及 $ T $的上界</h3><p>$ \mathbf{w_f^T} \mathbf{w_T} = \mathbf{w<em>f^T} (\mathbf{w</em>{T-1}} + y_n \mathbf{x_n})$</p>
+<p>$ \ \ \ \ \ \ \ \ \ \ \ \ = \mathbf{w<em>f^T} \mathbf{w</em>{T-1}} + y_n \mathbf{w_f^T} \mathbf{x_n} $</p>
+<p>$ \ \ \ \ \ \ \ \ \ \ \ \ \ge \mathbf{w<em>f^T} \mathbf{w</em>{T-1}} + \min_n y_n \mathbf{w_f^T} \mathbf{x_n} $</p>
+<p>$ \ \ \ \ \ \ \ \ \ \ \ \ = \mathbf{w_f^T} \mathbf{w_0} + T\min_n y_n \mathbf{w_f^T} \mathbf{x_n} $</p>
+<p>$ \ \ \ \ \ \ \ \ \ \ \ \ = T\min_n y_n \mathbf{w_f^T} \mathbf{x_n} $</p>
+<p>$ ||\mathbf{w<em>T}||^2 = ||\mathbf{w</em>{T-1}} + y<em>{n(T-1)} \mathbf{x</em>{n(T-1)}} ||^2$</p>
+<p>$ \ \ \ \ \ \ \ \ \ \ \ \ = ||\mathbf{w<em>{T-1}}||^2 + 2y</em>{n(T-1)} \mathbf{w<em>{T-1}^T} \mathbf{x</em>{n(T-1)}} + ||y<em>{n(T-1)} \mathbf{x</em>{n(T-1)}} ||^2$</p>
+<p>$ \ \ \ \ \ \ \ \ \ \ \ \ \le ||\mathbf{w<em>{T-1}}||^2 +||y</em>{n(T-1)} \mathbf{x_{n(T-1)}} ||^2$</p>
+<p>$ \ \ \ \ \ \ \ \ \ \ \ \ \le ||\mathbf{w_{T-1}}||^2 + \max_n||y_n \mathbf{x_n} ||^2$</p>
+<p>$ \ \ \ \ \ \ \ \ \ \ \ \ = ||\mathbf{w_{T-1}}||^2 + \max_n|| \mathbf{x_n} ||^2$</p>
+<p>$ \ \ \ \ \ \ \ \ \ \ \ \ = ||\mathbf{w_0}||^2 + T \max_n|| \mathbf{x_n} ||^2$</p>
+<p>$ \ \ \ \ \ \ \ \ \ \ \ \ = T \max_n|| \mathbf{x_n} ||^2$</p>
+<p>$ \frac {\mathbf{w_f^T}} {||\mathbf{w_f}||} \frac {\mathbf{w_T}} {||\mathbf{w_T}||} \ge \frac {T\min_n y_n \mathbf{w_f^T} \mathbf{x_n}} {||\mathbf{w_f}|| \sqrt{T \max_n|| \mathbf{x_n} ||^2}}$</p>
+<p>$ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ = \frac {T\min_n y_n \mathbf{w_f^T} \mathbf{x_n}} {||\mathbf{w_f}|| \sqrt{T \max_n|| \mathbf{x_n} ||^2}}$</p>
+<p>$ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ = \sqrt {T}\frac {\min_n y_n \frac {\mathbf{w_f^T}} {||\mathbf{w_f}||} \mathbf{x_n}} { \sqrt{\max_n|| \mathbf{x_n} ||^2}}$</p>
+<p>$ 1 \ge \frac {\mathbf{w_f^T}} {||\mathbf{w_f}||} \frac {\mathbf{w_T}} {||\mathbf{w_T}||} $ $ \Longrightarrow $ $ T \le \frac {\max_n|| \mathbf{x_n}||^2} {({\min_n y_n \frac {\mathbf{w_f^T}} {||\mathbf{w_f}||} \mathbf{x_n}})^2} $</p>
+<p>可知，$ \mathbf{w_t} $是不断缓慢接近$ \mathbf{w_f} $的，并且T是有上限的，也即在数据样本线性可分的情况下，PLA最终是会在有限的次数内找到一个接近$ f $的$ g $并停下来的。</p>
+<h2 id="2-4-None-Separable-Data"><a href="#2-4-None-Separable-Data" class="headerlink" title="2.4 None Separable Data"></a>2.4 None Separable Data</h2><p>线性不可分的数据</p>
+<p>PLA的缺陷：</p>
+<ul>
+<li>‘assumes’ linear separable $ D $ to halt —— property unknown in advance</li>
+<li>not fully sure how long halting takes ($ T $ depends on $ \mathbf{w_f} $) —— though practically fast</li>
+</ul>
+<p>样本中通常会混入noise，如录入错误、判断错误等，这种情况下原本线性可分的数据都会变成线性不可分，如下图。</p>
+<p><img src="http://ow5t5k2fx.bkt.clouddn.com/2.5.png" alt="image"></p>
+<ul>
+<li>assume ‘little’ noise: $ y_n = f(x_n) $ usually</li>
+<li>if so, $ g \approx f $ on $ D $ $ \Leftrightarrow $ $ y_n = g(x_n) $ usually</li>
+<li>try, $ \mathbf{w_g} \leftarrow \arg\min<em>w \sum</em>{n=1}^N[y_n \neq sign(\mathbf{w^T \mathbf{x_n}})]$  —— <strong>NP-hard to solve</strong></li>
+</ul>
+<p>近似的求解算法 —— Pocket Algorithm</p>
+<p>modify PLA algorithm by keeping best weights in pocket</p>
+<p>initialize pocket weights $ \mathbf{\hat w}$, for t = 0, 1, …</p>
+<ul>
+<li>find a (random) mistake of $ \mathbf{w<em>t} $ called $ (x</em>{n(t)}, y_{n(t)}) $</li>
+<li>(try to )correct the mistake by $ \mathbf{w_{t+1}} \leftarrow \mathbf{w<em>t} + y</em>{n(t)} \mathbf{x_{n(t)}} $ </li>
+<li>if $ \mathbf{w<em>{t+1}} $ makes fewer mistakes than $ \mathbf{\hat w}$, replace $ \mathbf{\hat w}$ by $ \mathbf{w</em>{t+1}} $</li>
+</ul>
+<p>…until enough iterations<br>return$ \mathbf{\hat w}$ (called $ \mathbf{w_{POCKET}} $) as g</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 机器学习基石 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 机器学习 </tag>
+            
+            <tag> 笔记 </tag>
+            
+            <tag> PLA </tag>
+            
+            <tag> Pocket </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[机器学习基石1——The Learning Problem]]></title>
+      <url>/2017/09/22/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B31/</url>
+      <content type="html"><![CDATA[<h2 id="1-1-Course-Introduction"><a href="#1-1-Course-Introduction" class="headerlink" title="1.1 Course Introduction"></a>1.1 Course Introduction</h2><p>课程简介</p>
+<h3 id="Foundation-Oriented-基础型"><a href="#Foundation-Oriented-基础型" class="headerlink" title="Foundation Oriented 基础型"></a>Foundation Oriented 基础型</h3><p>What every machine learning user should know:</p>
+<ul>
+<li>philosophical illustrations</li>
+<li>key theory</li>
+<li>core techniques</li>
+<li>usage in practice</li>
+</ul>
+<p>介绍了要掌握机器学习需要学好的四个方面：哲学思想、理论工具、算法技巧、实际使用。这门课将更偏重于理论和思想，而非算法。</p>
+<h3 id="课程主要分四大部分"><a href="#课程主要分四大部分" class="headerlink" title="课程主要分四大部分"></a>课程主要分四大部分</h3><ul>
+<li>When can machine learning?(illustative + technical)</li>
+<li>Why can machine learning?(theoretical + illustrative)</li>
+<li>How can machine learning?(technical + practical)</li>
+<li>How can machine learning better?(practical + theoretical)</li>
+</ul>
+<h2 id="1-2-What-is-Machine-Learning"><a href="#1-2-What-is-Machine-Learning" class="headerlink" title="1.2 What is Machine Learning"></a>1.2 What is Machine Learning</h2><p>什么是机器学习？</p>
+<h3 id="From-Learning-to-Machine-Learning"><a href="#From-Learning-to-Machine-Learning" class="headerlink" title="From Learning to Machine Learning"></a>From Learning to Machine Learning</h3><p>学习是人或者动物通过观察和思考转换成有用的技巧的过程。<br><img src="http://ow5t5k2fx.bkt.clouddn.com/1.1-learning.png" alt="学习"></p>
+<p>机器学习，则是计算机通过数据和计算获得有用技巧的过程。<br><img src="http://ow5t5k2fx.bkt.clouddn.com/1.2-machine_learning.png" alt="机器学习"></p>
+<p>skill，技巧又是什么呢？<br>技巧就是improve some performance measure，增进某种东西的表现。<br><img src="http://ow5t5k2fx.bkt.clouddn.com/1.3-skill.png" alt="机器学习"></p>
+<p>例如，通过前十年的股票数据得出能获得更多增益的投资技巧，就算是机器学习。</p>
+<h3 id="Why-use-machine-learning"><a href="#Why-use-machine-learning" class="headerlink" title="Why use machine learning?"></a>Why use machine learning?</h3><p>因为机器学习是一个alternative route to build complicated system</p>
+<ul>
+<li>When human cannot program system manually——navigating on Mars</li>
+<li>When human cannot ‘define the solution’ easily——speech/visual recognition</li>
+<li>When needing rapid decisions that human cannot do——high-frequency trading</li>
+<li>When needing to be user-oriented in a massive scale——consumer-targeted marketing</li>
+</ul>
+<h3 id="Key-Essence-of-Machine-Learning"><a href="#Key-Essence-of-Machine-Learning" class="headerlink" title="Key Essence of Machine Learning"></a>Key Essence of Machine Learning</h3><ul>
+<li>exists some ‘underlying pattern’ to be learned——so ‘performance measure’ can be improved</li>
+<li>but no programmable (easy) definition——so ML is needed</li>
+<li>somehow there is data about the pattern——so ML has some ‘inputs’ to learn from</li>
+</ul>
+<h2 id="1-3-Applications-of-Machine-Learning"><a href="#1-3-Applications-of-Machine-Learning" class="headerlink" title="1.3 Applications of Machine Learning"></a>1.3 Applications of Machine Learning</h2><p>机器学习的应用</p>
+<p>用几个实际的项目介绍了机器学习在人们日常生活中的衣食住行各方面的应用。本小节大概主要是为了激发兴趣和联系实际，并告诉大家机器学习的应用前景广泛。</p>
+<h2 id="1-4-Components-of-Machine-Learning"><a href="#1-4-Components-of-Machine-Learning" class="headerlink" title="1.4 Components of Machine Learning"></a>1.4 Components of Machine Learning</h2><p>机器学习的组成部分</p>
+<p>用银行判断是否要发行信用卡给客户的例子，来讲述机器学习可以分为哪些部分。用形式化符号来定义了要学习的问题。</p>
+<ul>
+<li><strong>input</strong>: $ x \in X $ (customer application, 银行通过用户申请资料获取的信息)</li>
+<li><strong>output</strong>: $ y \in Y $ (good/bad after approving credit card, 是否要发卡给客户)</li>
+<li>unknown pattern to be learned &lt;=&gt; <strong>target function</strong>: $ f: X \rightarrow Y $ (ideal credit approval formula, 理想的银行发卡公式)</li>
+<li><strong>data</strong> &lt;=&gt; training examples: $ D = {(x_1, y_1), (x_2, y_2), … ,(x_n, y_n)} $ (historical records in bank, 银行发卡的历史记录)</li>
+<li><strong>hypothesis</strong> &lt;=&gt; skill with hopefully good performance: $ g: X \rightarrow Y $ (‘learned’ formula to be used, 能学习到的公式)</li>
+</ul>
+<p>这样可以得到一个简单的流程图，如下：<br><img src="http://ow5t5k2fx.bkt.clouddn.com/1.4-simple_flow.png" alt="机器学习简要流程"></p>
+<p>可以看出，机器学习就是我们从一个未知的f中得到大量的数据，然后在这些数据的基础上得到一个未知的g的过程。</p>
+<p>更详细一点的流程图如下所示：<br><img src="http://ow5t5k2fx.bkt.clouddn.com/1.5-detail_flow.png" alt="机器学习简要流程"></p>
+<ul>
+<li>target $f$ unknown</li>
+<li>hypothesis $g$ hopefully $\approx f$ but possibly different from f</li>
+<li>hypothesis set $H$ can contain good or bad hypotheses, up to $A$ to pick the ‘best’ one as $g$</li>
+<li>learning model = $A$ and $H$</li>
+<li><strong>summary: use data to compute hypothesis $g$ that approximates target $f$</strong></li>
+</ul>
+<h2 id="1-5-Machine-Learning-and-Other-Fields"><a href="#1-5-Machine-Learning-and-Other-Fields" class="headerlink" title="1.5 Machine Learning and Other Fields"></a>1.5 Machine Learning and Other Fields</h2><p>机器学习与其他领域</p>
+<h3 id="Machine-Learning-and-Data-Mining"><a href="#Machine-Learning-and-Data-Mining" class="headerlink" title="Machine Learning and Data Mining"></a>Machine Learning and Data Mining</h3><p>机器学习与数据挖掘</p>
+<p>Data Mining: use (huge) data to <strong>find property that is interesting</strong></p>
+<p>例如超市经营者根据数据来判断某些物品的销售之间是不是有什么关联。</p>
+<p>Difficult to distinguish ML and DM in reality:</p>
+<ul>
+<li>if ‘interesting property’ same as ‘hypothesis that approximates target’——ML = DM</li>
+<li>if ‘interesting property’ related to ‘hypothesis that approximates target’——DM can help ML, and vice versa(often, not always)</li>
+<li>traditional DM also focused on efficient computation in large database</li>
+</ul>
+<h3 id="Machine-Learning-and-Artificial-Intelligence"><a href="#Machine-Learning-and-Artificial-Intelligence" class="headerlink" title="Machine Learning and Artificial Intelligence"></a>Machine Learning and Artificial Intelligence</h3><p>机器学习与人工智能</p>
+<p>Artificial Intelligence: compute something that <strong>shows intelligent behavior</strong></p>
+<p>例如让计算机自动下棋。</p>
+<p>ML is one possible route to realize AI:</p>
+<ul>
+<li>$g \approx f$ is something that shows intelligent behavior——ML can realize AI, among other routes</li>
+<li>e.g. chess playing<ul>
+<li>traditional AI: game tree</li>
+<li>ML for AI: ‘learning from data’</li>
+</ul>
+</li>
+</ul>
+<h3 id="Machine-Learning-and-Statistics"><a href="#Machine-Learning-and-Statistics" class="headerlink" title="Machine Learning and Statistics"></a>Machine Learning and Statistics</h3><p>机器学习与统计</p>
+<p>Statistics: use data to <strong>make inference</strong> about an unknown process</p>
+<p>例如丢硬币的正面几率。</p>
+<p>statistics has many useful tools for ML:</p>
+<ul>
+<li>$g$ is an inference outcome; $f$ is something unknown——statistics can be used to achieve ML</li>
+<li>traditional statistics also focus on provable results with math assumptions, and care less about computation</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 机器学习基石 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 机器学习 </tag>
+            
+            <tag> 笔记 </tag>
+            
+            <tag> 课程简介 </tag>
+            
+            <tag> 概念 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[NP问题简述]]></title>
+      <url>/2017/09/22/NP%E9%97%AE%E9%A2%98%E7%AE%80%E8%BF%B0/</url>
+      <content type="html"><![CDATA[<h3 id="首先，阐明一个概念，时间复杂度。"><a href="#首先，阐明一个概念，时间复杂度。" class="headerlink" title="首先，阐明一个概念，时间复杂度。"></a>首先，阐明一个概念，时间复杂度。</h3><p>时间复杂度，指的是当某个问题的规模扩大后，程序解决它需要耗费的时间的增长曲线。</p>
+<ul>
+<li>常数级，$O(1)$：程序处理某个问题所花费的时间与处理数据的规模没关系。通俗点说，就是当我的规模增长到原先的千百倍后，处理这个问题的时间仍旧不变。</li>
+<li>对数级，$O(logN)$：如二分查找。</li>
+<li>线性级，$O(N)$：处理时间同数据规模的增速一样。比如找$N$个值中的最大元素之类的问题。</li>
+<li>线性对数级，$O(N*logN)$：如归并排序。</li>
+<li>平方级，$O(N^2)$：如双层循环，插入排序。</li>
+<li>指数级，$O(2^N)$：如穷举。 </li>
+<li>阶乘级，$O(N!)$：如打印N个数的全排列。</li>
+</ul>
+<p>但是不会存在$O(N^3 + N^2 + 5)$这种复杂度的情况，只会是$O(N^3)$，因为系数（$2$）和更低级别的项（$N^3$），对程序时间增长的影响力远小于最高级别的项()。同理，$O(N^{1000})$将优于$O(1.001^N)$。</p>
+<p>如此，可将以上级别的时间复杂度大致分为两类：</p>
+<ul>
+<li>多项式级，如$O(1)$，$O(logN)$，$O(N^c)$，它的规模N出现在底数的位置</li>
+<li>非多项式级，如$O(c^N)$和$O(N!)$</li>
+</ul>
+<p>所以，解决问题时算法的时间复杂度务必要控制在<strong>多项式级别</strong>，因为非多项式的算法一旦数据规模增大它就没什么意义了。</p>
+<h3 id="那么能不能找到一个多项式级别的算法，来解决所有问题呢？"><a href="#那么能不能找到一个多项式级别的算法，来解决所有问题呢？" class="headerlink" title="那么能不能找到一个多项式级别的算法，来解决所有问题呢？"></a>那么能不能找到一个多项式级别的算法，来解决所有问题呢？</h3><p>我们将问题先大致分个类：</p>
+<ul>
+<li>有可以在多项式时间内解决问题的算法，此类问题称P问题</li>
+<li>可以在多项式的时间里验证/猜出一个解，属于NP问题</li>
+<li>不能在多项式时间内验证一个解，不是NP问题的问题，如确定一个图中是否不存在哈密顿回路，在试过所有路之前根本就没办法验证。</li>
+</ul>
+<p>现在考虑，假如你要尝试找一个问题的多项式级算法，可这个问题如果连在多项式时间内验证某个解都做不到，多项式算法自然更无从谈起了。这样一来，我们的着眼点就变成了尝试给NP问题寻找多项式级的算法。</p>
+<h3 id="显然P问题都属于NP问题，但是否所有NP问题都是P问题呢？"><a href="#显然P问题都属于NP问题，但是否所有NP问题都是P问题呢？" class="headerlink" title="显然P问题都属于NP问题，但是否所有NP问题都是P问题呢？"></a>显然P问题都属于NP问题，但是否所有NP问题都是P问题呢？</h3><p><img src="http://ow5t5k2fx.bkt.clouddn.com/NP.png" alt="image"></p>
+<p>用集合的观点来考虑，即$P = NP$是否成立。</p>
+<p>这个问题耗费了很多时间和精力仍然没有解决，但总的来说，普遍观点是存在至少一个不可能有多项式级复杂度算法的NP问题，即$P \neq NP$。因为在研究这个问题的过程中，发现了NPC问题。</p>
+<p>说到NPC问题，就要先提到归约。说“问题A可归约为问题B”，意即问题B的解法可以解决问题A。比如，知道一元二次方程的解法，那么一定会解一元一次方程。显然，“问题A可归约为问题B”，则B的时间复杂度大于等于A的时间复杂度，也就是问题A不比问题B难。并且，归约具有传递性。</p>
+<p>如果能找到一个多项式级别的变化法则，对任意一个程序A的输入，都能按这个法则变换成程序B的输入，使两程序的输出相同，那么我们说，问题A可多项式地归约为问题B。</p>
+<p>归约最终令时间复杂度增加，但问题的应用范围也扩大了。</p>
+<h3 id="那么最后能否归约出一个涵盖所有的NP问题的超级NP问题？"><a href="#那么最后能否归约出一个涵盖所有的NP问题的超级NP问题？" class="headerlink" title="那么最后能否归约出一个涵盖所有的NP问题的超级NP问题？"></a>那么最后能否归约出一个涵盖所有的NP问题的超级NP问题？</h3><p>可以想象，只要解决了这个超级NP问题，所有的NP问题就都迎刃而解。</p>
+<p>难以置信的是这种问题竟然真的存在，并且存在一类，此即所谓的NPC问题，也就是NP-完全问题。</p>
+<p>NPC问题的定义需要两个条件：</p>
+<ul>
+<li>是一个NP问题</li>
+<li>所有的NP问题都可以归约到它</li>
+</ul>
+<p>其证明需要两点：</p>
+<ul>
+<li>证明它是一个NP问题</li>
+<li>根据归约传递性，再证明其中一个已知的NPC问题能归约到它</li>
+</ul>
+<h3 id="如此，我们只要给一个NPC问题找到一个多项式的算法，那么所有NP问题都会是多项式可解的了。"><a href="#如此，我们只要给一个NPC问题找到一个多项式的算法，那么所有NP问题都会是多项式可解的了。" class="headerlink" title="如此，我们只要给一个NPC问题找到一个多项式的算法，那么所有NP问题都会是多项式可解的了。"></a>如此，我们只要给一个NPC问题找到一个多项式的算法，那么所有NP问题都会是多项式可解的了。</h3><p>但是给NPC问题找一个多项式算法太难了，目前只能用指数级甚至阶乘级复杂度的搜索，故大家普遍认为$P \neq NP$。</p>
+<p>此外，还有一类NP-Hard问题。NP-Hard问题仅需要满足NPC问题第二条，它放宽了问题的限定条件，所以可能比所有NPC问题的时间复杂度还要高，哪怕NPC解决了，NP-Hard也未必能解决。如围棋的必胜下法这个问题就属于NP-Hard问题。</p>
+<p>CIRCUIT-SAT，NPC问题的“鼻祖”：给定一个逻辑电路，问是否存在一种输入使输出为1。</p>
+<p>CIRCUIT-SAT属于NPC问题，证明过程相当复杂，大意是说任意一个NP问题的输入和输出都可以转换成逻辑电路的输入和输出（好比计算机内部）。</p>
+<p><img src="http://ow5t5k2fx.bkt.clouddn.com/npc.png" alt="image"></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 其他 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 概念 </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>/2017/09/14/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 其他 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> test </tag>
+            
+        </tags>
+        
+    </entry>
+    
+  
+  
+</search>
