@@ -1,5 +1,6 @@
 ---
 title: NP问题简述
+date: 2017-9-14 18:34:03
 tags: [算法, 概念]
 categories: 其他
 mathjax: true
