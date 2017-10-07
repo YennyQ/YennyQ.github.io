@@ -3,6 +3,244 @@
   
     
     <entry>
+      <title><![CDATA[机器学习基石4——Feasibility of Learning]]></title>
+      <url>/2017/10/07/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B34/</url>
+      <content type="html"><![CDATA[<h2 id="4-1-Learning-is-Impossible"><a href="#4-1-Learning-is-Impossible" class="headerlink" title="4.1 Learning is Impossible?"></a>4.1 Learning is Impossible?</h2><p>学习可能是做不到的？</p>
+<p><img src="http://ow5t5k2fx.bkt.clouddn.com/4.1.png" alt="image"></p>
+<ul>
+<li>$ g \approx f $ inside $ D $: sure</li>
+<li>$ g \approx f $ outside $ D $: No</li>
+</ul>
+<p>“天下没有免费午饭”哲学启示：’in-sample’可以求得一个最佳的假设$ g $，但是’out-of-sample’，如果没有prefer，假设$ g $和目标$ f $差别可能很远。</p>
+<h2 id="4-2-Probability-to-the-Rescue"><a href="#4-2-Probability-to-the-Rescue" class="headerlink" title="4.2 Probability to the Rescue"></a>4.2 Probability to the Rescue</h2><p>可能的补救</p>
+<p>回想统计学中通过抽样样本来推测整个样本情况的问题。</p>
+<p><img src="http://ow5t5k2fx.bkt.clouddn.com/4.2.png" alt="image"></p>
+<ul>
+<li><p>bin —— assume:</p>
+<ul>
+<li>orange probability = $ \mu $</li>
+<li>green probability = $ 1 - \mu $</li>
+</ul>
+</li>
+<li><p>sample —— N marbles sampled independently, with</p>
+<ul>
+<li>orange fraction = $ \nu $</li>
+<li>green fraction = $ 1 - \nu $</li>
+</ul>
+</li>
+</ul>
+<p>显然$ \nu $已知，那么$ \nu $是否能告诉我们一些’out-of-sample’的$ \mu $的信息呢？</p>
+<ul>
+<li>possibly not: $ \nu $完全不同于$ \mu $</li>
+<li>probably yes: $ \nu $是非常接近$ \mu $的</li>
+</ul>
+<p>可以想象，当你抽出的小球数量N越大，$ \nu $大概率越接近$ \mu $。</p>
+<p>数学上的支撑：霍夫丁不等式（Hoeffding’s Inequality）</p>
+<p>$ P[|\nu - \mu| &gt; \epsilon] \le 2 \exp(-2 \epsilon^2N)$</p>
+<p>不难看出，右侧$ N $足够大的话，$ \nu $与$ \mu $相差较大的概率是很小的。</p>
+<p>所以，<strong>the statement $ \nu = \mu $ is probably approximately correct(PAC)</strong></p>
+<h2 id="4-3-Connection-to-Learning"><a href="#4-3-Connection-to-Learning" class="headerlink" title="4.3 Connection to Learning"></a>4.3 Connection to Learning</h2><p>联系到学习</p>
+<table>
+<thead>
+<tr>
+<th>bin</th>
+<th>learning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未知的橙色小球比例 $ \mu $</td>
+<td>对于某固定的假设$ h(x) $，输入向量$ x $使得$ h(x) \neq   f(x)$占整个输入空间$ X $的比例</td>
+</tr>
+<tr>
+<td>抽样的小球 $ \in $ 整个罐中的小球</td>
+<td>训练样本 $ x $ $ \in $ 整个数据集$ X $</td>
+</tr>
+<tr>
+<td>橙色小球</td>
+<td>$ h $是错误的假设 $ \Leftrightarrow $ $ h(x) \neq f(x)$</td>
+</tr>
+<tr>
+<td>绿色小球</td>
+<td>$ h $是正确的假设 $ \Leftrightarrow $ $ h(x) = f(x)$</td>
+</tr>
+<tr>
+<td>N个小球样本是从罐中独立随机抽取的</td>
+<td>检验 $ h $ 的输入样本 $ x $是从数据集 $ D  = {(x_n, y_n)}$中独立随机选取的</td>
+</tr>
+</tbody>
+</table>
+<p>以上联系4.2节的内容到机器学习，做了类比。得出了以下流程：</p>
+<p><img src="http://ow5t5k2fx.bkt.clouddn.com/4.3.png" alt="image"></p>
+<p>也就是说，类似于4.2节统计学中i.i.d抽样推测整个样本概率分布问题，在机器学习中：<br>for any fixed $ h $, can probably infer unknown $ E_{out}(h) = \epsilon_{x~P} [h(x) \neq f(x)] $ by known $ E_{in}(h) = \frac 1 N \sum_{n=1}^N [h(x) \neq y_n]$.</p>
+<p>接下来，对固定假设$ h $，将使用$ E_{in} $表示独立随机抽样样本的错误率，$ E_{out} $表示在整个输入空间中的错误率。</p>
+<p>同样，套用霍夫丁不等式，$ P[|E_{in} - E_{out}| &gt; \epsilon] \le 2 \exp(-2 \epsilon^2N)$，只要$ N $足够大，在不需要知道 $ E_{out}$的情况下 ，也可以确保$ E_{in}(h) = E_{out}(h) $ PCA。</p>
+<p>但是仅仅在$ E_{in} \approx E_{out} $的情况下，can we claim ‘good learning’($ g \approx f$)？</p>
+<ul>
+<li>Yes，如果$ E_{in}(h)$对这个$ h $够小，并且算法$ A $选取了这个$ h $作为$ g $的话。</li>
+<li>No，如果算法选取的$ h $给出的$ E_{in}(h)$如果不是足够小的话。</li>
+</ul>
+<p>通过以上讲述，可以看出，相比于学习问题，这反倒更像是一个验证（verification）问题，给出fixed $ h $，确认这个$ h $的表现是不是足够好，对应流程图如下：</p>
+<p><img src="http://ow5t5k2fx.bkt.clouddn.com/4.4.png" alt="image"></p>
+<h2 id="4-4-Connection-to-Real-Learning"><a href="#4-4-Connection-to-Real-Learning" class="headerlink" title="4.4 Connection to Real Learning"></a>4.4 Connection to Real Learning</h2><p>联系到真正的学习</p>
+<p>举个例子，丢硬币，150人同时丢五次硬币，其中出现某个人丢出五次全部正面朝上的几率是多少？一个人时几率是$ \frac {1} {32} $，150时这个几率则增大到了$ 1 - (\frac {31} {32})^{150} \gt $ 99%。</p>
+<p><img src="http://ow5t5k2fx.bkt.clouddn.com/4.5.png" alt="image"></p>
+<p>从选择角度来说，需要选择错误率最小的，也就是$ E_{in} = 0$，此时抛出的硬币五次全为正面，这一结论却与实际情况相差较大。</p>
+<p>为什么会出现这种情况呢？</p>
+<p>BAD sample</p>
+<p>BAD data: $ E_{in} $ and $ E_{out} $ far away，混入了几个不好的sample，导致该次抽样数据产生出了不好的结果的数据集。</p>
+<ul>
+<li>Bad Data for One $ h $</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>One</th>
+<th>$ D_1$</th>
+<th>$ D_2$</th>
+<th>…</th>
+<th>$ D_{1126} $</th>
+<th>…</th>
+<th>$ D_{5678} $</th>
+<th>…</th>
+<th>Hoeffding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> $ h $</td>
+<td>BAD</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>BAD</td>
+<td></td>
+<td>$ P_D[BAD D  for  h] \le $ …</td>
+</tr>
+</tbody>
+</table>
+<p>Hoeffding: small $ P_D[BAD D] = \sum_{all possible D} P(D) \cdot [BAD D ]$</p>
+<ul>
+<li>Bad Data for Many $ h $ $ \Leftrightarrow $ no ‘freedom of choice’ by $ A $ $ \Leftrightarrow $ there exists some $ h $ such that $ E_{out}(h) $ and $ E_{in}(h) $ far away.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Many</th>
+<th>$ D_1$</th>
+<th>$ D_2$</th>
+<th>…</th>
+<th>$ D_{1126} $</th>
+<th>…</th>
+<th>$ D_{5678} $</th>
+<th>…</th>
+<th>Hoeffding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> $ h_1 $</td>
+<td>BAD</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>BAD</td>
+<td></td>
+<td>$ P_D[BAD D  for  h_1] \le $ …</td>
+</tr>
+<tr>
+<td> $ h_2 $</td>
+<td></td>
+<td>BAD</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>$ P_D[BAD D  for  h_2] \le $ …</td>
+</tr>
+<tr>
+<td> $ h_3 $</td>
+<td>BAD</td>
+<td>BAD</td>
+<td></td>
+<td></td>
+<td></td>
+<td>BAD</td>
+<td></td>
+<td>$ P_D[BAD D  for  h_3] \le $ …</td>
+</tr>
+<tr>
+<td> …</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td> $ h_M $</td>
+<td>BAD</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>BAD</td>
+<td></td>
+<td>$ P_D[BAD D  for  h_M] \le $ …</td>
+</tr>
+<tr>
+<td> all</td>
+<td>BAD</td>
+<td>BAD</td>
+<td></td>
+<td></td>
+<td></td>
+<td>BAD</td>
+<td></td>
+<td>?</td>
+</tr>
+</tbody>
+</table>
+<p>允许算法自由选择假设$ h $的情况下，就需要避开所有的Bad Data。</p>
+<p>计算一下Bound of BAD Data</p>
+<p>$ P_D[BAD D]$<br>$ = P_D[BAD  D for h_1  or  BAD  D for h_2  or  …   BAD D for h_M]$</p>
+<p>$                      \le P_D[BAD D  for  h_1] + P_D[BAD D  for  h_2] + … + P_D[BAD D  for  h_M] $  (union bound)</p>
+<p>$                      \le 2\exp(-2 \epsilon^2N) + 2 \exp(-2 \epsilon^2N) + … + 2 \exp(-2 \epsilon^2N) $</p>
+<p>$                      = 2M\exp(-2 \epsilon^2N)$</p>
+<p>因此，机器学习是可以做到的，在下面两个保证下：</p>
+<ul>
+<li>if $ |H| = M $ finite, $ N $ large enough, for whatever $ g $ picked by $ A $, $ E_{out}(g) \approx E_{in}(g) $</li>
+<li>if $ A $ finds one $ g $ with $ E_{in}(g) \approx 0 $, PAC guarantee for $ E_{out}(g) \approx 0 $</li>
+</ul>
+<p><img src="http://ow5t5k2fx.bkt.clouddn.com/4.6.png" alt="image"></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 机器学习基石 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 机器学习 </tag>
+            
+            <tag> 笔记 </tag>
+            
+            <tag> 机器学习的可行性 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[机器学习基石3——Types of Learning]]></title>
       <url>/2017/09/20/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B33/</url>
       <content type="html"><![CDATA[<h2 id="3-1-Learning-with-Different-Output-Space-Y"><a href="#3-1-Learning-with-Different-Output-Space-Y" class="headerlink" title="3.1 Learning with Different Output Space $ Y $"></a>3.1 Learning with Different Output Space $ Y $</h2><p>不同的输出空间</p>
@@ -452,15 +690,24 @@
     <entry>
       <title><![CDATA[Hello World]]></title>
       <url>/2017/09/12/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+      <content type="html"><![CDATA[<table>
+<thead>
+<tr>
+<th>header 1</th>
+<th>header 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>row 1 col 1</td>
+<td>row 1 col 2</td>
+</tr>
+<tr>
+<td>row 2 col 1</td>
+<td>row 2 col 2</td>
+</tr>
+</tbody>
+</table>
 ]]></content>
       
         <categories>
